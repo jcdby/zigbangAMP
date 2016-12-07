@@ -22,30 +22,71 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     CSS must be embedded inline.
   -->
   <style amp-custom>
-    h1 {
+    body {
+      background-color: #f6f6f6
+    }
+    h1, h3 {
       color: white;
+    }
+    #btnBack {
+      font-size: 32px;
+      font-weight: lighter;
+      margin:0
+    }
+    #btnSafeProxy {
+      font-size: 22px;
+      font-weight: medium
     }
 
     nav {
       background-color: #ffa409;
-      min-height: 112
+      min-height: 112;
+      display: flex;
+      align-items: center;
+      justify-content: start;
     }
 
     .title{
-      width: 60%;
-      display: inline-block;
+
+      flex:3
     }
 
-    .header {
+    .headerBack {
       padding: 1em;
-      display: flex;
-      
+      flex: 1;
 
+    }
+    .headerShareAndLike {
+      flex:2
     }
     .pic {
       position: relative;
-      top: -32px;
+
       z-index: -1
+    }
+    .safeProxy {
+      display: flex;
+      background-color: #0ec4bf
+    }
+    .contentsWrapper {
+      padding: 0 20px 0 20px
+    }
+    .houseDetailsCard {
+      display: flex;
+      flex-direction: column;
+    }
+    .houseDetailsCard > h1 {
+      color: black;
+      font-weight: bold;
+      margin: 0;
+      padding: 24px 0 24px 15px
+    }
+    .houseDetailsTable {
+      border-width: 2px;
+      border-style:solid;
+      border-color: #e1e1e1;
+      display:flex;
+      flex-direction: column;
     }
   </style>
   <!--
@@ -61,21 +102,44 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   -->
 
   <nav >
-    <div class="header">
+    <div class="headerBack">
       <amp-img  src="./img/ic_back.png" width="32" height="32"  ></amp-img>
     <div class="title">
-      <h1>서울시 강남구 신상동</h1>
+      <h1 id="btnBack">서울시 강남구 신상동</h1>
     </div>
-    <amp-img src="./img/ic_share.png" width="32" height="32"></amp-img>
+    <div>
+      <amp-img src="./img/ic_share.png" width="32" height="32"></amp-img>
     <amp-img src="./img/ic_like_normal.png" width="32" height="32"></amp-img>
+    </div>
+    
     </div>
   </nav>
 
   <main>
-    <div class="pic" >
+    <section class="pic" >
       <amp-img src="./img/Layer 1411.png" width="720" height="908" layout="responsive"></amp-img>
-    </div>
-    
+    </section>
+    <section class="safeProxy">
+      <amp-img src="./img/Vector Smart Object.png" width="178" height="53" ></amp-img>
+      <h1 id="btnSafeProxy">가 등록한 방입니다.</h3>
+      <amp-img src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
+    </section>
+    <section class="contentsWrapper">
+      <div class="houseDetailsCard">
+        <h1>신사동 예쁜 쓰리룸</h1>
+        <div class="houseDetailsTable">
+          <div>other thing 1</div>
+          <div>other thing 2</div>
+          <div>
+            other thing 3
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
   </main>
   
   
