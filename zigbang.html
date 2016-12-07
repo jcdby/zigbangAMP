@@ -16,18 +16,36 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <!--
     AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
   -->
-  <link rel="canonical" href="<%host%>/Introduction/Hello_World">
+  <link rel="canonical" href="<%host%>/Hello_World">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <!--
     CSS must be embedded inline.
   -->
   <style amp-custom>
     h1 {
-      color: red;
+      color: white;
     }
 
     nav {
-      background-color: #ffa409
+      background-color: #ffa409;
+      min-height: 112
+    }
+
+    .title{
+      width: 60%;
+      display: inline-block;
+    }
+
+    .header {
+      padding: 1em;
+      display: flex;
+      
+
+    }
+    .pic {
+      position: relative;
+      top: -32px;
+      z-index: -1
     }
   </style>
   <!--
@@ -42,12 +60,25 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     Most HTML tags can be used directly in AMP HTML.
   -->
 
-  <nav width="auto" height="112" layout="responsible">
-    nav
+  <nav >
+    <div class="header">
+      <amp-img  src="./img/ic_back.png" width="32" height="32"  ></amp-img>
+    <div class="title">
+      <h1>서울시 강남구 신상동</h1>
+    </div>
+    <amp-img src="./img/ic_share.png" width="32" height="32"></amp-img>
+    <amp-img src="./img/ic_like_normal.png" width="32" height="32"></amp-img>
+    </div>
   </nav>
-  <h1>Hello World!</h1>
+
+  <main>
+    <div class="pic" >
+      <amp-img src="./img/Layer 1411.png" width="720" height="908" layout="responsive"></amp-img>
+    </div>
+    
+  </main>
   
-  <amp-img src="./img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+  
 
 </body>
 </html>
