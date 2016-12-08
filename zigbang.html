@@ -27,18 +27,22 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <style amp-custom>
     /*font*/
+    
     .SourceHanSansKR {
       font-family: "Source Han Sans KR"
     }
+    
     .NotoSansCJKkr {
       font-family: "NotoSansCJKkr"
     }
+    
     body {
       display: flex;
       flex-direction: column;
-      background-color: #f6f6f6
+      background-color: #f6f6f6;
     }
     
     .subtitle {
@@ -82,86 +86,99 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       font-family: "NotoSansCJKkr"
     }
     
-    
-    
     #btnBack,
     #titleSafeProxy {
       color: white;
     }
     /*header end*/
-    
-
     /*
     blue board
     */
-        
+    
     .safeProxy {
       display: flex;
       background-color: #0ec4bf;
     }
+    
     .safeProxyContentWrapper {
-      flex:1;
+      flex: 1;
       padding: 24px 35px 16px 23px;
       justify-content: flex-start;
       align-items: center;
     }
-
+    
     #titleSafeProxy {
       font-size: 32px;
       font-weight: 300;
-      margin-right:180px
+      margin-right: 180px
     }
-    
-
     /*
     table
     */
+    
     table {
+      width: 100%;
+      border-collapse: collapse;
       border: 1px solid #eeeeee
     }
-    td {
-      height:60px;
+    
+    td,
+    th {
       font-family: "NotoSansCJKkr";
+      padding-left: 18px;
+    }
+    
+    td {
+      font-size: 26px;
+      font-weight: normal;
+    }
+    
+    th {
+      text-align: left;
+      height: 60px;
       font-size: 26px;
       font-weight: medium;
       color: #6a6a6a;
+      background-color: #fafafa;
+      width: 31%;
+      max-width: 31%
     }
-    .col1 {
-      width:30%;
-      background-color: #fafafa
-      
+    
+    
+    .zigBangStrong {
+      color: #ee7912;
+      font-size: 34px;
+      font-weight: bold;
+      padding-right: 12px
     }
-    .col1-2 {
-      width: 32.78%;
-
-    }
+    
     .table1 {
       border-collapse: collapse;
       width: 100%;
       height: 240px
     }
-    .table1-pic {
-      display:flex;
-      justify-content: flex-end;
-      padding:12px 26px 0 0
-    }
     
-
-
+    .table1-pic {
+      position: relative;
+      top: 14%;
+      right: 5%;
+      /*padding:12px 26px 0 0*/
+    }
     /*
     ==============================================
     */
+    
     .contentsWrapper {
       display: flex;
       flex-direction: column;
       padding: 0 20px 0 20px
     }
     
-
     .houseDetailsCardTitle {
       font-size: 34px;
       font-weight: bold
     }
+    
     .houseDetailsCard {
       display: flex;
       flex-direction: column;
@@ -175,11 +192,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     }
     
     .houseDetailsTable {
-      border-width: 2px;
-      border-style: solid;
-      border-color: #e1e1e1;
-      display: flex;
-      flex-direction: column;
+      border: 2px solid #e1e1e1;
     }
     
     .descriptionWrapper {
@@ -190,7 +203,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     .description {
       margin: 0;
       padding: 31px 39px 35px 23px;
-      font-size: 14px
+      font-size: 26px
     }
     
     .buildingInfoWrapper {
@@ -326,7 +339,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   -->
 
   <nav>
-    <div class="header flexRow center">
+    <div class=" header flexRow center">
       <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
       <div class="headerTitle">
         <h1 id="btnBack">서울시 강남구 신사동</h1>
@@ -358,7 +371,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
         />
       </div>
     </amp-carousel>
-    <section  class="safeProxy">
+    <section class="safeProxy">
       <div class="flexRow safeProxyContentWrapper">
         <div>
           <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
@@ -374,85 +387,82 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     <section class="contentsWrapper">
       <div class="houseDetailsCard">
         <h1 class="NotoSansCJKkr houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
-        <div class="houseDetailsTable descriptionWrapper">
-          <div class="flexRow" style="justify-content:space-between">
-            <div style="flex:1">
-              <table style="flex:1" class="table1">
-                
-                <tbody>
-                  <colgroup>
+        <div class="table1-pic">
+          <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
+        </div>
+        <div class="houseDetailsTable descriptionWrapper flexColumn">
+          <div style="flex:1">
+            <table style="flex:1" class="table1">
+              <tbody>
+                <colgroup>
                   <col span="1" class="col1">
                   <col class="col1-2">
                 </colgroup>
-                  <tr>
-                    <td>보증금</td>
-                    <td><span>10000</span>만원</td>
-                  </tr>
-                  <tr>
-                    <td>월세</td>
-                    <td><span>100</span>만원</td>
-                  </tr>
-                  <tr>
-                    <td>등록 번호</td>
-                    <td>1234567</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div style="flex:1" class="table1-pic">
-              <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
-            </div>
+                <tr>
+                  <th>보증금</th>
+                  <td><span class="zigBangStrong">10000</span>만원</td>
+                </tr>
+                <tr>
+                  <th>월세</th>
+                  <td><span class="zigBangStrong">100</span>만원</td>
+                </tr>
+                <tr>
+                  <th>등록 번호</th>
+                  <td>1234567</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div>
             <table>
               <tr>
-                <td>주소</td>
+                <th>주소</th>
                 <td>서울시 강남구 신사동</td>
               </tr>
               <tr>
-                <td>인근전철역</td>
+                <th>인근전철역</th>
                 <td>신사역(3호선)압구정역(7호선)</td>
               </tr>
               <tr>
-                <td>층/건물층수</td>
+                <th>층/건물층수</th>
                 <td>3층/4층</td>
               </tr>
               <tr>
-                <td>크기</td>
+                <th>크기</th>
                 <td>전용면적60.10m²18.18P</td>
               </tr>
               <tr>
-                <td>구조</td>
+                <th>구조</th>
                 <td>쓰리룸+</td>
               </tr>
               <tr>
-                <td>건물형태</td>
+                <th>건물형태</th>
                 <td>다세대/다가구</td>
               </tr>
             </table>
             <table>
               <tr>
-                <td>옵션</td>
+                <th>옵션</th>
                 <td>옷장</td>
               </tr>
               <tr>
-                <td>관리비</td>
+                <th>관리비</th>
                 <td>없음</td>
               </tr>
               <tr>
-                <td>관리비 포함항목</td>
+                <th>관리비 포함항목</th>
                 <td>수도</td>
               </tr>
               <tr>
-                <td>주차</td>
+                <th>주차</th>
                 <td>불가능</td>
               </tr>
               <tr>
-                <td>엘레베이터</td>
+                <th>엘레베이터</th>
                 <td>없음</td>
               </tr>
               <tr>
-                <td>입주가능일</td>
+                <th>입주가능일</th>
                 <td>4월21일 이후</td>
               </tr>
             </table>
@@ -494,12 +504,15 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       <div class="subtitle">
         <h1>위치정보</h1>
       </div>
+      <amp-iframe  width=680 height=400
+                sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                layout="responsive"
+                frameborder="0"
+                src="./daum.html">
+      </amp-iframe>
       <div class="descriptionWrapper">
-        <div style="display:flex; flex-direction: column">
-          <amp-img style="flex:1" src="./img/map_placeholder.png" weight=auto height=200></amp-img>
           <div class="flexRow">
             <div class="button center flexRow" style="flex:1; align-self:center">
-
               <amp-img width=35 height=35 src="./img/view_map.png"></amp-img>
               <h3 style="margin:0">지도보기</h3>
             </div>
@@ -508,9 +521,6 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
               <h3>로드뷰보기</h3>
             </div>
           </div>
-        </div>
-
-
       </div>
 
       <div class="subtitle">
@@ -553,18 +563,22 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
 
     </section>
   </main>
+
+
   <footer>
-    <div class="footerContentWrapper flexRow">
+    <div class=" footerContentWrapper flexRow">
       <div>
         <p>우정공인중개사(김성훈)</p>
         <p>중개보조원(한유진팀장)</p>
-        <p>010-5228-7825</p>
+        <p class="zigBangStrong">010-5228-7825</p>
       </div>
       <div>
         <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
       </div>
     </div>
   </footer>
+
+
 
 
 </body>
