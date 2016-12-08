@@ -1,26 +1,586 @@
-<!doctype html>
-<html>
-  <head></head>
-  <body>
-    <!-- * Daum 지도 - 지도퍼가기 -->
-<!-- 1. 지도 노드 -->
-<div id="daumRoughmapContainer1481202179227" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-  </body>
- 
-
 <!--
-	2. 설치 스크립트
-	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+#### Introduction
+An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. AMP HTML is entirely built on existing web technologies. It achieves reliable performance by restricting some parts of HTML, CSS and JavaScript. To make up for those limitations AMP HTML defines a set of custom elements for rich content beyond basic HTML. This samples shows what's necessary to create a valid AMP HTML file.
 -->
-<script charset="UTF-8" class="daum_roughmap_loader_script" src="http://dmaps.daum.net/map_js_init/roughmapLoader.js"></script>
+<!-- -->
+<!doctype html>
+<!-- This tells everyone that this is an AMP file. `<html amp>` works too. -->
+<html ⚡>
+<!-- #### Head -->
+<!-- -->
 
-<!-- 3. 실행 스크립트 -->
-<script charset="UTF-8">
-	new daum.roughmap.Lander({
-		"timestamp" : "1481202179227",
-		"key" : "enqx",
-		"mapWidth" : "600",
-		"mapHeight" : "300"
-	}).render();
-</script>
+<head>
+  <!-- The charset definition must be the first child of the `<head>` tag. -->
+  <meta charset="utf-8">
+  <!-- The AMP runtime must be loaded as the second child of the `<head>` tag.-->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!--
+    AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
+  -->
+  <link rel="canonical" href="<%host%>/Hello_World">
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <!--
+    CSS must be embedded inline.
+  -->
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <style amp-custom>
+    /*font*/
+    
+    .SourceHanSansKR {
+      font-family: "Source Han Sans KR"
+    }
+    
+    .NotoSansCJKkr {
+      font-family: "NotoSansCJKkr"
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: #f6f6f6;
+    }
+    
+    .subtitle {
+      padding-left: 15px;
+      color: #616161
+    }
+    
+    nav {
+      background-color: #ffa409;
+      min-height: 112;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+    /*header part*/
+    
+    .header {
+      padding: 39px 31px 39px 31px;
+      flex: 1;
+    }
+    
+    .headerBackArrow {
+      margin-right: 31px;
+    }
+    
+    .headerTitle {
+      flex: 2;
+      margin-right: 31px;
+      letter-spacing: 1px
+    }
+    
+    .headerShareAndLike {
+      flex: 1
+    }
+    
+    #btnBack {
+      font-size: 38px;
+      font-weight: 200;
+      margin: 0;
+      color: white;
+      font-family: "NotoSansCJKkr"
+    }
+    
+    #btnBack,
+    #titleSafeProxy {
+      color: white;
+    }
+    /*header end*/
+    /*
+    blue board
+    */
+    
+    .safeProxy {
+      display: flex;
+      background-color: #0ec4bf;
+    }
+    
+    .safeProxyContentWrapper {
+      flex: 1;
+      padding: 24px 35px 16px 23px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    
+    #titleSafeProxy {
+      font-size: 32px;
+      font-weight: 300;
+      margin-right: 180px
+    }
+    /*
+    table
+    */
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #eeeeee
+    }
+    
+    td,
+    th {
+      font-family: "NotoSansCJKkr";
+      padding-left: 18px;
+    }
+    
+    td {
+      font-size: 26px;
+      font-weight: normal;
+    }
+    
+    th {
+      text-align: left;
+      height: 60px;
+      font-size: 26px;
+      font-weight: medium;
+      color: #6a6a6a;
+      background-color: #fafafa;
+      width: 31%;
+      max-width: 31%
+    }
+    
+    
+    .zigBangStrong {
+      color: #ee7912;
+      font-size: 34px;
+      font-weight: bold;
+      padding-right: 12px
+    }
+    
+    .table1 {
+      border-collapse: collapse;
+      width: 100%;
+      height: 240px
+    }
+    
+    .table1-pic {
+      position: relative;
+      top: 14%;
+      right: 5%;
+      /*padding:12px 26px 0 0*/
+    }
+    /*
+    ==============================================
+    */
+    
+    .contentsWrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px 0 20px
+    }
+    
+    .houseDetailsCardTitle {
+      font-size: 34px;
+      font-weight: bold
+    }
+    
+    .houseDetailsCard {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .houseDetailsCard > h1 {
+      color: black;
+      font-weight: bold;
+      margin: 0;
+      padding: 24px 0 24px 15px
+    }
+    
+    .houseDetailsTable {
+      border: 2px solid #e1e1e1;
+    }
+    
+    .descriptionWrapper {
+      background-color: white;
+      border: 2px solid #e1e1e1;
+    }
+    
+    .description {
+      margin: 0;
+      padding: 31px 39px 35px 23px;
+      font-size: 26px
+    }
+    
+    .buildingInfoWrapper {
+      display: flex;
+      flex-direction: row;
+      padding: 25px 35px 20px 23px
+    }
+    
+    .button {
+      background-color: white;
+      height: 76px;
+      border: 2px solid #e1e1e1;
+    }
+    
+    .center {
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .flexRow,
+    .flexColumn {
+      display: flex;
+    }
+    
+    .flexRow {
+      flex-direction: row;
+    }
+    
+    .flexColumn {
+      flex-direction: column;
+    }
+    
+    .warnWrapper {
+      background-color: #848484;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .warn {
+      margin: 0;
+      padding: 16px 36px 20px 26px;
+      color: white;
+      font-weight: 100
+    }
+    
+    .warnStrong {
+      font-weight: bold
+    }
+    
+    footer {
+      background-color: #ffffff
+    }
+    
+    .footerContentWrapper {
+      padding: 27px 32px 27px 32px;
+      justify-content: space-between;
+    }
+  </style>
+  <!--
+    The AMP boilerplate.
+  -->
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+    
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+    
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+    
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+    
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+    
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+  </style>
+  <noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+    </style>
+  </noscript>
+</head>
+<!-- #### Body -->
+<!-- -->
+
+<body>
+
+  <!--
+    Most HTML tags can be used directly in AMP HTML.
+  -->
+
+  <nav>
+    <div class=" header flexRow center">
+      <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
+      <div class="headerTitle">
+        <h1 id="btnBack">서울시 강남구 신사동</h1>
+      </div>
+      <div class="headerShareAndLike">
+        <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
+        <amp-img src="./img/ic_like_normal.png" width="42" height="40"></amp-img>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+    <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic1.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic2.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic3.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic4.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+    </amp-carousel>
+    <section class="safeProxy">
+      <div class="flexRow safeProxyContentWrapper">
+        <div>
+          <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
+        </div>
+        <div>
+          <h1 style="flex:3" class="SourceHanSansKR" id="titleSafeProxy">가 등록한 방입니다.</h3>
+        </div>
+        <div>
+          <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
+        </div>
+      </div>
+    </section>
+    <section class="contentsWrapper">
+      <div class="houseDetailsCard">
+        <h1 class="NotoSansCJKkr houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
+        <div class="table1-pic">
+          <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
+        </div>
+        <div class="houseDetailsTable descriptionWrapper flexColumn">
+          <div style="flex:1">
+            <table style="flex:1" class="table1">
+              <tbody>
+                <colgroup>
+                  <col span="1" class="col1">
+                  <col class="col1-2">
+                </colgroup>
+                <tr>
+                  <th>보증금</th>
+                  <td><span class="zigBangStrong">10000</span>만원</td>
+                </tr>
+                <tr>
+                  <th>월세</th>
+                  <td><span class="zigBangStrong">100</span>만원</td>
+                </tr>
+                <tr>
+                  <th>등록 번호</th>
+                  <td>1234567</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <th>주소</th>
+                <td>서울시 강남구 신사동</td>
+              </tr>
+              <tr>
+                <th>인근전철역</th>
+                <td>신사역(3호선)압구정역(7호선)</td>
+              </tr>
+              <tr>
+                <th>층/건물층수</th>
+                <td>3층/4층</td>
+              </tr>
+              <tr>
+                <th>크기</th>
+                <td>전용면적60.10m²18.18P</td>
+              </tr>
+              <tr>
+                <th>구조</th>
+                <td>쓰리룸+</td>
+              </tr>
+              <tr>
+                <th>건물형태</th>
+                <td>다세대/다가구</td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <th>옵션</th>
+                <td>옷장</td>
+              </tr>
+              <tr>
+                <th>관리비</th>
+                <td>없음</td>
+              </tr>
+              <tr>
+                <th>관리비 포함항목</th>
+                <td>수도</td>
+              </tr>
+              <tr>
+                <th>주차</th>
+                <td>불가능</td>
+              </tr>
+              <tr>
+                <th>엘레베이터</th>
+                <td>없음</td>
+              </tr>
+              <tr>
+                <th>입주가능일</th>
+                <td>4월21일 이후</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="subtitle">
+        <h1>상세설명</h1>
+      </div>
+      <div class="descriptionWrapper">
+        <p class="description">
+          거실과 방이 크게 나온 신사동 3룸 입니다^^<br> 남향집이고 해가 너무 잘들고 근처 건물들에 비해서 집이 깨끗하고 뷰도 좋은 편입니다. <br> 가격은 집주인 분과 상의 후에 조정 가능합니다! <br>          깔끔하고 좋은 집 보러 연락주세요!
+        </p>
+      </div>
+      <div class="subtitle">
+        <h1>담당자 한마디</h1>
+      </div>
+      <div class="descriptionWrapper">
+        <p class="description">
+          공휴일 및 주말에도 언제든지 상담 가능<br> 차량 픽업 서비스 가능 <br> 조건에 맞는 집 답사 <br> 상담부터 계약까지 고객 맞춤형 서비스
+        </p>
+      </div>
+      <div class="subtitle">
+        <h1>건물정보</h1>
+      </div>
+      <div class="descriptionWrapper">
+        <div class="buildingInfoWrapper">
+          <amp-img style="flex:1" src="./img/buildingPic.png" width="240" height="240" layout="responsive"></amp-img>
+          <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
+            <p style="margin:0">고려 아카데미 텔</p>
+            <p style="margin:0">서울시 마포구 아현동 438-3</p>
+            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+            <p style="margin:0">17층</p>
+            <p style="margin:0">675세대</p>
+            <p style="margin:0">1987.11</p>
+          </div>
+        </div>
+      </div>
+      <div class="subtitle">
+        <h1>위치정보</h1>
+      </div>
+      <amp-iframe  width=680 height=400
+                sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                layout="responsive"
+                frameborder="0"
+                src="./daum.html">
+      </amp-iframe>
+      <div class="descriptionWrapper">
+          <div class="flexRow">
+            <div class="button center flexRow" style="flex:1; align-self:center">
+              <amp-img width=35 height=35 src="./img/view_map.png"></amp-img>
+              <h3 style="margin:0">지도보기</h3>
+            </div>
+            <div class="flexRow button center" style="flex:1; align-self:cneter">
+              <amp-img width=21 height=33 src="./img/view_road.png"></amp-img>
+              <h3>로드뷰보기</h3>
+            </div>
+          </div>
+      </div>
+
+      <div class="subtitle">
+        <h1>중개사정보</h1>
+      </div>
+      <div class="descriptionWrapper flexColumn">
+        <div class="description">
+          <div class="flexRow">
+            <div>
+              place holder
+            </div>
+            <div>
+              <h2>대표공인중개사(이갑영)</h2>
+              <p>okok@naver.com</p>
+              <p>010-1234-4567</p>
+            </div>
+          </div>
+          <div>
+            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+            <h3>중개사무소 정보</h3>
+            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+          </div>
+          <div>
+            <ul>
+              <li>서울시 마포구, 테리 부동산(김테리)</li>
+              <li>대표번호: 1588-1688</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="warnWrapper">
+        <div class="warn">
+          이 방은 <span class="warnStrong">공인중개사가 등록한 중개 매물</span>입니다. <br> 공인중개사를 통해 <span class="warnStrong">안전하게 계약</span>할수
+          있으며, <span class="warnStrong">법정 중개 보수가 발생</span>합니다.
+        </div>
+      </div>
+
+
+
+    </section>
+  </main>
+
+
+  <footer>
+    <div class=" footerContentWrapper flexRow">
+      <div>
+        <p>우정공인중개사(김성훈)</p>
+        <p>중개보조원(한유진팀장)</p>
+        <p class="zigBangStrong">010-5228-7825</p>
+      </div>
+      <div>
+        <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
 </html>
