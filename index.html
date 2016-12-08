@@ -504,8 +504,9 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       <div class="subtitle">
         <h1>위치정보</h1>
       </div>
-      <amp-iframe  width=680 height=400
+      <amp-iframe style="border:1px solid #e1e1e1; overflow:auto" width=680 height=400
                 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                
                 layout="responsive"
                 frameborder="0"
                 src="https://jcdby.github.io/zigbangAMP/daumMap.html">
@@ -578,6 +579,18 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     </div>
   </footer>
 
+
+<amp-list width=auto
+      height=100
+      layout=fixed-height
+      src="https://ampbyexample.com/json/examples.json">
+    <template type="amp-mustache"
+        id="amp-template-id">
+      <div>
+        <a href={{url}}>{{title}}</a>
+      </div>
+    </template>
+  </amp-list>
 
 
 
