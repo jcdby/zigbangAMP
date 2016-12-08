@@ -18,13 +18,23 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
   -->
   <link rel="canonical" href="<%host%>/Hello_World">
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <!--
     CSS must be embedded inline.
   -->
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
   <style amp-custom>
+    /*font*/
+    .SourceHanSansKR {
+      font-family: "Source Han Sans KR"
+    }
+    .NotoSansCJKkr {
+      font-family: "NotoSansCJKkr"
+    }
     body {
       display: flex;
       flex-direction: column;
@@ -36,23 +46,6 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       color: #616161
     }
     
-    #btnBack {
-      font-size: 32px;
-      font-weight: lighter;
-      margin: 0;
-      color: white;
-    }
-    
-    #btnSafeProxy {
-      font-size: 22px;
-      font-weight: medium
-    }
-    
-    #btnBack,
-    #btnSafeProxy {
-      color: white;
-    }
-    
     nav {
       background-color: #ffa409;
       min-height: 112;
@@ -60,36 +53,80 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       align-items: center;
       justify-content: start;
     }
+    /*header part*/
     
-    .title {
-      flex: 3
-    }
-    
-    .headerBack {
-      padding: 1em;
+    .header {
+      padding: 39px 31px 39px 31px;
       flex: 1;
     }
     
+    .headerBackArrow {
+      margin-right: 31px;
+    }
+    
+    .headerTitle {
+      flex: 2;
+      margin-right: 31px;
+      letter-spacing: 1px
+    }
+    
     .headerShareAndLike {
-      flex: 2
+      flex: 1
     }
     
-    .pic {
-      position: relative;
-      z-index: -1
+    #btnBack {
+      font-size: 38px;
+      font-weight: 200;
+      margin: 0;
+      color: white;
+      font-family: "NotoSansCJKkr"
     }
     
+    
+    
+    #btnBack,
+    #titleSafeProxy {
+      color: white;
+    }
+    /*header end*/
+    
+
+    /*
+    blue board
+    */
+        
     .safeProxy {
       display: flex;
-      background-color: #0ec4bf
+      background-color: #0ec4bf;
+    }
+    .safeProxyContentWrapper {
+      flex:1;
+      padding: 24px 35px 16px 23px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    #titleSafeProxy {
+      font-size: 32px;
+      font-weight: 300;
+      margin-right:180px
     }
     
+
+    /*
+    
+    */
     .contentsWrapper {
       display: flex;
       flex-direction: column;
       padding: 0 20px 0 20px
     }
     
+
+    .houseDetailsCardTitle {
+      font-size: 34px;
+      font-weight: bold
+    }
     .houseDetailsCard {
       display: flex;
       flex-direction: column;
@@ -126,28 +163,56 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       flex-direction: row;
       padding: 25px 35px 20px 23px
     }
-
+    
     .button {
       background-color: white;
       height: 76px;
       border: 2px solid #e1e1e1;
     }
     
-
     .center {
       justify-content: center;
       align-items: center;
     }
-    .flexRow, flexColumn{
+    
+    .flexRow,
+    .flexColumn {
       display: flex;
     }
+    
     .flexRow {
       flex-direction: row;
     }
+    
     .flexColumn {
       flex-direction: column;
     }
     
+    .warnWrapper {
+      background-color: #848484;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .warn {
+      margin: 0;
+      padding: 16px 36px 20px 26px;
+      color: white;
+      font-weight: 100
+    }
+    
+    .warnStrong {
+      font-weight: bold
+    }
+    
+    footer {
+      background-color: #ffffff
+    }
+    
+    .footerContentWrapper {
+      padding: 27px 32px 27px 32px;
+      justify-content: space-between;
+    }
   </style>
   <!--
     The AMP boilerplate.
@@ -220,54 +285,83 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
 <!-- -->
 
 <body>
+
   <!--
     Most HTML tags can be used directly in AMP HTML.
   -->
 
   <nav>
-    <div class="headerBack">
-      <amp-img src="./img/ic_back.png" width="32" height="32"></amp-img>
-      <div class="title">
-        <h1 id="btnBack">서울시 강남구 신상동</h1>
+    <div class="header flexRow center">
+      <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
+      <div class="headerTitle">
+        <h1 id="btnBack">서울시 강남구 신사동</h1>
       </div>
-      <div>
-        <amp-img src="./img/ic_share.png" width="32" height="32"></amp-img>
-        <amp-img src="./img/ic_like_normal.png" width="32" height="32"></amp-img>
+      <div class="headerShareAndLike">
+        <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
+        <amp-img src="./img/ic_like_normal.png" width="42" height="40"></amp-img>
       </div>
-
     </div>
   </nav>
 
   <main>
-    <section class="pic">
-      <amp-img src="./img/Layer 1411.png" width="720" height="908" layout="responsive"></amp-img>
-    </section>
-    <section class="safeProxy">
-      <amp-img src="./img/Vector Smart Object.png" width="178" height="53"></amp-img>
-      <h1 id="btnSafeProxy">가 등록한 방입니다.</h3>
-        <amp-img src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
+    <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+    <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic1.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic2.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic3.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+      <div>
+        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic4.jpg" width="720" height="908" layout="responsive"
+        />
+      </div>
+    </amp-carousel>
+    <section  class="safeProxy">
+      <div class="flexRow safeProxyContentWrapper">
+        <div>
+          <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
+        </div>
+        <div>
+          <h1 style="flex:3" class="SourceHanSansKR" id="titleSafeProxy">가 등록한 방입니다.</h3>
+        </div>
+        <div>
+          <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
+        </div>
+      </div>
     </section>
     <section class="contentsWrapper">
       <div class="houseDetailsCard">
-        <h1>신사동 예쁜 쓰리룸</h1>
-        <div class="houseDetailsTable">
-          <div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>보증금</td>
-                  <td><span>10000</span>만원</td>
-                </tr>
-                <tr>
-                  <td>월세</td>
-                  <td><span>100</span>만원</td>
-                </tr>
-                <tr>
-                  <td>등록 번호</td>
-                  <td>1234567</td>
-                </tr>
-              </tbody>
-            </table>
+        <h1 class="NotoSansCJKkr houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
+        <div class="houseDetailsTable descriptionWrapper">
+          <div class="flexRow" style="justify-content:space-between">
+            <div style="flex:1">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>보증금</td>
+                    <td><span>10000</span>만원</td>
+                  </tr>
+                  <tr>
+                    <td>월세</td>
+                    <td><span>100</span>만원</td>
+                  </tr>
+                  <tr>
+                    <td>등록 번호</td>
+                    <td>1234567</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="flex:1">
+              <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
+            </div>
           </div>
           <div>
             <table>
@@ -323,8 +417,6 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
               </tr>
             </table>
           </div>
-
-
         </div>
       </div>
       <div class="subtitle">
@@ -352,7 +444,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
           <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
             <p style="margin:0">고려 아카데미 텔</p>
             <p style="margin:0">서울시 마포구 아현동 438-3</p>
-            <amp-img src="./img/line.png" width=384 height=2 layout="responsive" ></amp-img>
+            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
             <p style="margin:0">17층</p>
             <p style="margin:0">675세대</p>
             <p style="margin:0">1987.11</p>
@@ -364,14 +456,12 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       </div>
       <div class="descriptionWrapper">
         <div style="display:flex; flex-direction: column">
-          <amp-img style="flex:1" src="./img/map_placeholder.png" weight=auto height=200  ></amp-img>
+          <amp-img style="flex:1" src="./img/map_placeholder.png" weight=auto height=200></amp-img>
           <div class="flexRow">
             <div class="button center flexRow" style="flex:1; align-self:center">
 
-                <amp-img width=35 height=35 src="./img/view_map.png"></amp-img>
+              <amp-img width=35 height=35 src="./img/view_map.png"></amp-img>
               <h3 style="margin:0">지도보기</h3>
-
-              
             </div>
             <div class="flexRow button center" style="flex:1; align-self:cneter">
               <amp-img width=21 height=33 src="./img/view_road.png"></amp-img>
@@ -379,29 +469,62 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
             </div>
           </div>
         </div>
-          
+
 
       </div>
 
       <div class="subtitle">
         <h1>중개사정보</h1>
       </div>
-    </section>
-
-     <amp-list width=auto
-      height=100
-      layout=fixed-height
-      src="https://ampbyexample.com/json/examples.json">
-    <template type="amp-mustache"
-        id="amp-template-id">
-      <div>
-        <a href={{url}}>{{title}}</a>
+      <div class="descriptionWrapper flexColumn">
+        <div class="description">
+          <div class="flexRow">
+            <div>
+              place holder
+            </div>
+            <div>
+              <h2>대표공인중개사(이갑영)</h2>
+              <p>okok@naver.com</p>
+              <p>010-1234-4567</p>
+            </div>
+          </div>
+          <div>
+            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+            <h3>중개사무소 정보</h3>
+            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+          </div>
+          <div>
+            <ul>
+              <li>서울시 마포구, 테리 부동산(김테리)</li>
+              <li>대표번호: 1588-1688</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </template>
-  </amp-list>
 
+      <div class="warnWrapper">
+        <div class="warn">
+          이 방은 <span class="warnStrong">공인중개사가 등록한 중개 매물</span>입니다. <br> 공인중개사를 통해 <span class="warnStrong">안전하게 계약</span>할수
+          있으며, <span class="warnStrong">법정 중개 보수가 발생</span>합니다.
+        </div>
+      </div>
+
+
+
+    </section>
   </main>
-
+  <footer>
+    <div class="footerContentWrapper flexRow">
+      <div>
+        <p>우정공인중개사(김성훈)</p>
+        <p>중개보조원(한유진팀장)</p>
+        <p>010-5228-7825</p>
+      </div>
+      <div>
+        <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
+      </div>
+    </div>
+  </footer>
 
 
 </body>
