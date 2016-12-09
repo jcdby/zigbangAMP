@@ -434,7 +434,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
 <!-- #### Body -->
 <!-- -->
 
-<body>
+<body id="b">
 
   <!--
     Most HTML tags can be used directly in AMP HTML.
@@ -454,23 +454,32 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     </nav>
 
     <main>
-      <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+
       <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
         <div>
-          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic1.jpg" width="720" height="908" layout="responsive"
+          <a onclick="showModal()">
+            <amp-img src="./img/pic1.jpg" width="720" height="908" layout="responsive"
           />
+          </a>
+          
         </div>
         <div>
-          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic2.jpg" width="720" height="908" layout="responsive"
-          />
+          <a onclick="showModal()">
+            <amp-img   src="./img/pic2.jpg" width="720" height="908" layout="responsive"
+            />
+          </a>
         </div>
         <div>
-          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic3.jpg" width="720" height="908" layout="responsive"
-          />
+         <a onclick="showModal()">
+            <amp-img   src="./img/pic3.jpg" width="720" height="908" layout="responsive"
+            />
+          </a>
         </div>
         <div>
-          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic4.jpg" width="720" height="908" layout="responsive"
-          />
+          <a onclick="showModal()">
+            <amp-img   src="./img/pic4.jpg" width="720" height="908" layout="responsive"
+            />
+          </a>
         </div>
       </amp-carousel>
       <section class="safeProxy">
@@ -675,6 +684,12 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
         </div>
       </div>
     </footer>
+     <div id="modal" class="modal">
+      <button onclick="closeModal()">X</button>
+      <div class="modalContent">
+
+      </div>
+    </div>
   </div>
 
 </body>
