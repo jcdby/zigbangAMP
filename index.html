@@ -17,8 +17,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <!--
     AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
   -->
-  <link rel="canonical" href="<%host%>/Hello_World">
-  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <link rel="canonical" href="/index">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <!--
     CSS must be embedded inline.
@@ -29,28 +28,35 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <style amp-custom>
-    /*font*/
-    
-    .SourceHanSansKR {
-      font-family: "Source Han Sans KR"
+  @font-face {
+      font-family: "SHSKR Normal";
+      src: url("./SourceHanSansKR/SourceHanSansKR-Normal.otf");
     }
-    
-    .NotoSansCJKkr {
-      font-family: "NotoSansCJKkr"
+    @font-face {
+      font-family: "SHSKR Bold";
+      src: url("./SourceHanSansKR/SourceHanSansKR-Bold.otf");
     }
-    
-    .fontNormal {
-      font-weight: normal;
+    @font-face {
+      font-family: "SHSKR Light";
+      src: url("./SourceHanSansKR/SourceHanSansKR-Light.otf");
     }
-    
-    .fontLighter {
-      font-weight: lighter;
+    @font-face {
+      font-family: "SHSKR Medium";
+      src: url("./SourceHanSansKR/SourceHanSansKR-Medium.otf");
     }
-    
-    .fontBold {
-      font-weight: bold;
+    @font-face {
+      font-family: "Noto CJK Regular";
+      src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Regular.otf");
     }
-    /**/
+    @font-face {
+      font-family: "Noto CJK Medium";
+      src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Medium.otf");
+    }
+    @font-face {
+      font-family: "Noto CJK Bold";
+      src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Bold.otf");
+    }
+
     
     .container {
       width: 720px;
@@ -61,14 +67,19 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       display: flex;
       flex-direction: column;
       background-color: #f6f6f6;
+
     }
+
+    
     
     .subtitle {
-      padding-left: 15px;
-      color: #616161
+      padding: 25px 0 16px 15px;
+      color: #616161;
+      font-family: "Noto CJK Bold";
+      font-size: 34px
     }
     
-    p {
+    p, h1 {
       margin: 0;
     }
     
@@ -105,7 +116,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       font-weight: 200;
       margin: 0;
       color: white;
-      font-family: "NotoSansCJKkr"
+      font-family: "Noto CJK Regular"
     }
     
     #btnBack,
@@ -132,7 +143,8 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     #titleSafeProxy {
       font-size: 32px;
       font-weight: 300;
-      margin-right: 180px
+      margin-right: 180px;
+      font-family: "SHSKR Medium"
     }
     /*
     table
@@ -146,13 +158,13 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     
     td,
     th {
-      font-family: "NotoSansCJKkr";
       padding-left: 18px;
     }
     
     td {
       font-size: 26px;
-      font-weight: normal;
+
+      font-family: "Noto CJK Regular"
     }
     
     th {
@@ -163,14 +175,16 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       color: #6a6a6a;
       background-color: #fafafa;
       width: 31%;
-      max-width: 31%
+      max-width: 31%;
+      font-family: "Noto CJK Medium"
     }
     
     .zigBangStrong {
       color: #ee7912;
       font-size: 34px;
       font-weight: bold;
-      padding-right: 12px
+      padding-right: 12px;
+      font-family: "Noto CJK Bold"
     }
     
     .table1 {
@@ -197,7 +211,8 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     
     .houseDetailsCardTitle {
       font-size: 34px;
-      font-weight: bold
+      font-weight: bold;
+      font-family: "Noto CJK Bold"
     }
     
     .houseDetailsCard {
@@ -222,9 +237,18 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     }
     
     .description {
-      margin: 0;
       padding: 31px 39px 35px 23px;
-      font-size: 26px
+    }
+
+    .buildingInfo, .description {
+      font-family: "Noto CJK Regular"
+    }
+    .buildingInfoTitle,.buildingInfo, .description {
+      margin: 0;
+      font-size: 26px;
+    }
+    .buildingInfoTitle {
+      font-family: "Noto CJK Medium"
     }
     
     .buildingInfoWrapper {
@@ -238,14 +262,26 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       height: 76px;
       border: 2px solid #e1e1e1;
     }
+
+    .positionBtn {
+      font-size: 34px;
+      font-family: "Noto CJK Regular" 
+    }
     
-    .brokerIntroFont {
+    .brokerInfoTitle, .brokerInfoContent, .brokerInfoAddr {
       font-size: 25px;
     }
-    
-    .brokerIntroList {
-      list-style-image: url("./img/listPoint.png")
+    .brokerInfoTitle {
+      font-family: "SHSKR Medium"
     }
+    .brokerInfoContent {
+      font-family: "SHSKR Normal"
+    }
+    .brokerInfoAddr {
+      font-family: "SHSKR Bold"
+    }
+    
+    
     
     .brokerIntroBox {
       margin: 16px 10px 16px 10px
@@ -285,10 +321,11 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       padding: 16px 36px 20px 26px;
       color: white;
       font-weight: 100;
+      font-family: "SHSKR Light"
     }
     
     .warnStrong {
-      font-weight: bold
+      font-family: "SHSKR Bold"
     }
     
     .symbolBroker {
@@ -297,17 +334,19 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     }
     
     .brokerOne {
+      font-family: "SHSKR Medium";
       color: #929292;
-      font-size: 25px;
+      font-size: 23px;
     }
     
     .brokerTwo {
-      font-size: 28px;
+      font-family: "SHSKR Medium";
+      font-size: 27px;
     }
     
     .brokerOne,
     .brokerTwo {
-      padding-bottom: 1px;
+      padding-bottom: 3px;
     }
     
     footer {
@@ -398,8 +437,8 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     <nav>
       <div class=" header flexRow center">
         <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
-        <div class="headerTitle">
-          <h1 id="btnBack">서울시 강남구 신사동</h1>
+        <div class="headerTitle ">
+          <p  id="btnBack">서울시 강남구 신사동</p>
         </div>
         <div class="headerShareAndLike">
           <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
@@ -434,7 +473,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
             <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
           </div>
           <div>
-            <h1 style="flex:3" class="SourceHanSansKR" id="titleSafeProxy">가 등록한 방입니다.</h3>
+            <h1 style="flex:3"  id="titleSafeProxy">가 등록한 방입니다.</h3>
           </div>
           <div>
             <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
@@ -443,7 +482,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       </section>
       <section class="contentsWrapper">
         <div class="houseDetailsCard">
-          <h1 class="NotoSansCJKkr houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
+          <h1 class="houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
           <div class="houseDetailsTable descriptionWrapper flexColumn">
             <div style="flex:1" class="flexRow">
               
@@ -524,7 +563,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
           </div>
         </div>
         <div class="subtitle">
-          <h1>상세설명</h1>
+          <p>상세설명</p>
         </div>
         <div class="descriptionWrapper">
           <p class="description">
@@ -533,7 +572,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
           </p>
         </div>
         <div class="subtitle">
-          <h1>담당자 한마디</h1>
+          <p>담당자 한마디</p>
         </div>
         <div class="descriptionWrapper">
           <p class="description">
@@ -541,23 +580,23 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
           </p>
         </div>
         <div class="subtitle">
-          <h1>건물정보</h1>
+          <p>건물정보</p>
         </div>
         <div class="descriptionWrapper">
           <div class="buildingInfoWrapper">
             <amp-img style="flex:1" src="./img/buildingPic.png" width="240" height="240" layout="responsive"></amp-img>
             <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
-              <p style="margin:0">고려 아카데미 텔</p>
-              <p style="margin:0">서울시 마포구 아현동 438-3</p>
+              <p class="buildingInfoTitle">고려 아카데미 텔</p>
+              <p class="buildingInfo" style="color: #333333">서울시 마포구 아현동 438-3</p>
               <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
-              <p style="margin:0">17층</p>
-              <p style="margin:0">675세대</p>
-              <p style="margin:0">1987.11</p>
+              <p class="buildingInfo" >17층</p>
+              <p class="buildingInfo" >675세대</p>
+              <p class="buildingInfo" >1987.11</p>
             </div>
           </div>
         </div>
         <div class="subtitle">
-          <h1>위치정보</h1>
+          <p>위치정보</p>
         </div>
         <amp-iframe style="border:1px solid #e1e1e1; overflow:auto" width=680 height=400 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
           layout="responsive" frameborder="0" src="https://jcdby.github.io/zigbangAMP/daumMap.html">
@@ -565,18 +604,18 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
         <div class="descriptionWrapper">
           <div class="flexRow">
             <div class="button center flexRow" style="flex:1; align-self:center">
-              <amp-img width=35 height=35 src="./img/view_map.png"></amp-img>
-              <h3 style="margin:0">지도보기</h3>
+              <amp-img style="margin-right: 16px" width=35 height=35 src="./img/view_map.png"></amp-img>
+              <p class="positionBtn">지도보기</p>
             </div>
             <div class="flexRow button center" style="flex:1; align-self:cneter">
-              <amp-img width=21 height=33 src="./img/view_road.png"></amp-img>
-              <h3>로드뷰보기</h3>
+              <amp-img style="margin-right: 16px" width=30 height=41 src="./img/view_road.png"></amp-img>
+              <p class="positionBtn">로드뷰보기</p>
             </div>
           </div>
         </div>
 
         <div class="subtitle">
-          <h1>중개사정보</h1>
+          <p>중개사정보</p>
         </div>
         <div class="descriptionWrapper flexColumn">
           <div class="description">
@@ -585,24 +624,24 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
                 <amp-img src="./img/profile.png" width=202 height=202></amp-img>
               </div>
               <div style="flex:2">
-                <p class="brokerIntroFont fontNormal SourceHanSansKR">대표공인중개사(이갑영)</p>
-                <p class="brokerIntroFont fontLighter SourceHanSansKR">okok@naver.com</p>
-                <p class="brokerIntroFont fontLighter SourceHanSansKR"><span>010-1234-4567</span></p>
+                <p class="brokerInfoTitle">대표공인중개사(이갑영)</p>
+                <p class="brokerInfoContent">okok@naver.com</p>
+                <p class="brokerInfoContent"><span>010-1234-4567</span></p>
               </div>
             </div>
             <div>
               <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
-              <p class="brokerIntroBox brokerIntroFont fontBold SourceHanSansKR" style="color: #333333">중개사무소 정보</p>
+              <p class="brokerIntroBox brokerInfoAddr fontBold NotoSans" style="color: #333333">중개사무소 정보</p>
               <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
             </div>
             <div class="flexColumn brokerIntroBox">
               <div>
                 <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
-                <span class="brokerIntroFont fontLighter SourceHanSansKR">서울시 마포구, 테리 부동산(김테리)</span>
+                <span class="brokerInfoContent">서울시 마포구, 테리 부동산(김테리)</span>
               </div>
               <div>
                 <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
-                <span class="brokerIntroFont fontLighter SourceHanSansKR">대표번호: 1588-1688</span>
+                <span class="brokerInfoContent">대표번호: 1588-1688</span>
               </div>
             </div>
           </div>
@@ -624,11 +663,11 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     <footer>
       <div class=" footerContentWrapper flexRow">
         <div>
-          <p class="brokerOne NotoSansCJKkr">우정공인중개사(김성훈)</p>
-          <p class="brokerTwo SourceHanSansKR">중개보조원(한유진팀장)</p>
-          <p style="font-size:28px" class="zigBangStrong SourceHanSansKR"><span>010-5228-7825</span><span><img class="symbolBroker"  src="./img/symbolBroker.png" alt=""></span> </p>
+          <p class="brokerOne">우정공인중개사(김성훈)</p>
+          <p class="brokerTwo">중개보조원(한유진팀장)</p>
+          <p style="font-size:28px" class="zigBangStrong NotoSans"><span>010-5228-7825</span><span><img class="symbolBroker"  src="./img/symbolBroker.png" alt=""></span> </p>
         </div>
-        <div>
+        <div style="padding-top:3px">
           <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
         </div>
       </div>
