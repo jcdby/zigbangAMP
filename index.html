@@ -22,11 +22,13 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <!--
     CSS must be embedded inline.
   -->
+  <link rel="stylesheet" href="./style.css">
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script type="text/javascript" src="./zigbang.js"></script>
   <style amp-custom>
   @font-face {
       font-family: "SHSKR Normal";
@@ -57,13 +59,12 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Bold.otf");
     }
 
-    
-    .container {
+.container {
       width: 720px;
       margin: auto;
     }
-    
-    body {
+
+     body {
       display: flex;
       flex-direction: column;
       background-color: #f6f6f6;
@@ -357,6 +358,11 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       padding: 27px 32px 27px 32px;
       justify-content: space-between;
     }
+
+    
+    
+    
+   
   </style>
   <!--
     The AMP boilerplate.
@@ -598,8 +604,8 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
         <div class="subtitle">
           <p>위치정보</p>
         </div>
-        <amp-iframe style="border:1px solid #e1e1e1; overflow:auto" width=680 height=400 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          layout="responsive" frameborder="0" src="./daumMap.html">
+        <amp-iframe style="border:1px solid #e1e1e1; overflow:auto" width=680 height=400 sandbox="allow-scripts  allow-popups allow-popups-to-escape-sandbox"
+          layout="responsive" frameborder="0" src="https://jcdby.github.io/zigbangAMP/daumMap.html">
         </amp-iframe>
         <div class="descriptionWrapper">
           <div class="flexRow">
@@ -653,9 +659,6 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
             있으며, <span class="warnStrong">법정 중개 보수가 발생</span>합니다.
           </div>
         </div>
-
-
-
       </section>
     </main>
 
