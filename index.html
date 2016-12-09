@@ -38,35 +38,38 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     .NotoSansCJKkr {
       font-family: "NotoSansCJKkr"
     }
+    
     .fontNormal {
       font-weight: normal;
-
     }
+    
     .fontLighter {
       font-weight: lighter;
     }
+    
     .fontBold {
       font-weight: bold;
     }
     /**/
+    
     .container {
       width: 720px;
       margin: auto;
     }
+    
     body {
       display: flex;
       flex-direction: column;
       background-color: #f6f6f6;
-      
-
     }
     
     .subtitle {
       padding-left: 15px;
       color: #616161
     }
+    
     p {
-      margin:0;
+      margin: 0;
     }
     
     nav {
@@ -163,7 +166,6 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       max-width: 31%
     }
     
-    
     .zigBangStrong {
       color: #ee7912;
       font-size: 34px;
@@ -179,8 +181,8 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     
     .table1-pic {
       position: relative;
-      top: 14%;
-      right: 5%;
+      right: 246px;
+      top: 19px;
       /*padding:12px 26px 0 0*/
     }
     /*
@@ -236,13 +238,15 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       height: 76px;
       border: 2px solid #e1e1e1;
     }
-
+    
     .brokerIntroFont {
       font-size: 25px;
-    }   
+    }
+    
     .brokerIntroList {
       list-style-image: url("./img/listPoint.png")
     }
+    
     .brokerIntroBox {
       margin: 16px 10px 16px 10px
     }
@@ -271,10 +275,11 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       margin-bottom: 20px;
     }
     
-    .warn, .warnStrong {
-      font-size:24px
+    .warn,
+    .warnStrong {
+      font-size: 24px
     }
-
+    
     .warn {
       margin: 0;
       padding: 16px 36px 20px 26px;
@@ -285,21 +290,24 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     .warnStrong {
       font-weight: bold
     }
-
+    
     .symbolBroker {
       vertical-align: sub;
-      padding-left:10px;
+      padding-left: 10px;
     }
+    
     .brokerOne {
       color: #929292;
       font-size: 25px;
     }
+    
     .brokerTwo {
       font-size: 28px;
     }
-    .brokerOne, .brokerTwo {
+    
+    .brokerOne,
+    .brokerTwo {
       padding-bottom: 1px;
-
     }
     
     footer {
@@ -386,181 +394,175 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <!--
     Most HTML tags can be used directly in AMP HTML.
   -->
-<div class="container">
-  <nav>
-    <div class=" header flexRow center">
-      <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
-      <div class="headerTitle">
-        <h1 id="btnBack">서울시 강남구 신사동</h1>
+  <div class="container">
+    <nav>
+      <div class=" header flexRow center">
+        <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
+        <div class="headerTitle">
+          <h1 id="btnBack">서울시 강남구 신사동</h1>
+        </div>
+        <div class="headerShareAndLike">
+          <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
+          <amp-img src="./img/ic_like_normal.png" width="42" height="40"></amp-img>
+        </div>
       </div>
-      <div class="headerShareAndLike">
-        <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
-        <amp-img src="./img/ic_like_normal.png" width="42" height="40"></amp-img>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main>
-    <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
-    <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
-      <div>
-        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic1.jpg" width="720" height="908" layout="responsive"
-        />
-      </div>
-      <div>
-        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic2.jpg" width="720" height="908" layout="responsive"
-        />
-      </div>
-      <div>
-        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic3.jpg" width="720" height="908" layout="responsive"
-        />
-      </div>
-      <div>
-        <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic4.jpg" width="720" height="908" layout="responsive"
-        />
-      </div>
-    </amp-carousel>
-    <section class="safeProxy">
-      <div class="flexRow safeProxyContentWrapper">
+    <main>
+      <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+      <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
         <div>
-          <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
+          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic1.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
         <div>
-          <h1 style="flex:3" class="SourceHanSansKR" id="titleSafeProxy">가 등록한 방입니다.</h3>
+          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic2.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
         <div>
-          <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
+          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic3.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
-      </div>
-    </section>
-    <section class="contentsWrapper">
-      <div class="houseDetailsCard">
-        <h1 class="NotoSansCJKkr houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
-        <div class="table1-pic">
-          <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
+        <div>
+          <amp-img on="tap:lightbox1" role="button" tabindex="0" src="./img/pic4.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
-        <div class="houseDetailsTable descriptionWrapper flexColumn">
-          <div style="flex:1">
-            <table style="flex:1" class="table1">
-              <tbody>
-                <colgroup>
-                  <col span="1" class="col1">
-                  <col class="col1-2">
-                </colgroup>
-                <tr>
-                  <th>보증금</th>
-                  <td><span class="zigBangStrong">10000</span>만원</td>
-                </tr>
-                <tr>
-                  <th>월세</th>
-                  <td><span class="zigBangStrong">100</span>만원</td>
-                </tr>
-                <tr>
-                  <th>등록 번호</th>
-                  <td><span>1234567</span></td>
-                </tr>
-              </tbody>
-            </table>
+      </amp-carousel>
+      <section class="safeProxy">
+        <div class="flexRow safeProxyContentWrapper">
+          <div>
+            <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
           </div>
           <div>
-            <table>
-              <tr>
-                <th>주소</th>
-                <td>서울시 강남구 신사동</td>
-              </tr>
-              <tr>
-                <th>인근전철역</th>
-                <td>신사역(3호선)압구정역(7호선)</td>
-              </tr>
-              <tr>
-                <th>층/건물층수</th>
-                <td>3층/4층</td>
-              </tr>
-              <tr>
-                <th>크기</th>
-                <td>전용면적60.10m²18.18P</td>
-              </tr>
-              <tr>
-                <th>구조</th>
-                <td>쓰리룸+</td>
-              </tr>
-              <tr>
-                <th>건물형태</th>
-                <td>다세대/다가구</td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <th>옵션</th>
-                <td>옷장</td>
-              </tr>
-              <tr>
-                <th>관리비</th>
-                <td>없음</td>
-              </tr>
-              <tr>
-                <th>관리비 포함항목</th>
-                <td>수도</td>
-              </tr>
-              <tr>
-                <th>주차</th>
-                <td>불가능</td>
-              </tr>
-              <tr>
-                <th>엘레베이터</th>
-                <td>없음</td>
-              </tr>
-              <tr>
-                <th>입주가능일</th>
-                <td>4월21일 이후</td>
-              </tr>
-            </table>
+            <h1 style="flex:3" class="SourceHanSansKR" id="titleSafeProxy">가 등록한 방입니다.</h3>
+          </div>
+          <div>
+            <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
           </div>
         </div>
-      </div>
-      <div class="subtitle">
-        <h1>상세설명</h1>
-      </div>
-      <div class="descriptionWrapper">
-        <p class="description">
-          거실과 방이 크게 나온 신사동 3룸 입니다^^<br> 남향집이고 해가 너무 잘들고 근처 건물들에 비해서 집이 깨끗하고 뷰도 좋은 편입니다. <br> 가격은 집주인 분과 상의 후에 조정 가능합니다! <br>          깔끔하고 좋은 집 보러 연락주세요!
-        </p>
-      </div>
-      <div class="subtitle">
-        <h1>담당자 한마디</h1>
-      </div>
-      <div class="descriptionWrapper">
-        <p class="description">
-          공휴일 및 주말에도 언제든지 상담 가능<br> 차량 픽업 서비스 가능 <br> 조건에 맞는 집 답사 <br> 상담부터 계약까지 고객 맞춤형 서비스
-        </p>
-      </div>
-      <div class="subtitle">
-        <h1>건물정보</h1>
-      </div>
-      <div class="descriptionWrapper">
-        <div class="buildingInfoWrapper">
-          <amp-img style="flex:1" src="./img/buildingPic.png" width="240" height="240" layout="responsive"></amp-img>
-          <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
-            <p style="margin:0">고려 아카데미 텔</p>
-            <p style="margin:0">서울시 마포구 아현동 438-3</p>
-            <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
-            <p style="margin:0">17층</p>
-            <p style="margin:0">675세대</p>
-            <p style="margin:0">1987.11</p>
+      </section>
+      <section class="contentsWrapper">
+        <div class="houseDetailsCard">
+          <h1 class="NotoSansCJKkr houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
+          <div class="houseDetailsTable descriptionWrapper flexColumn">
+            <div style="flex:1" class="flexRow">
+              
+              <table style="flex:1" class="table1">
+                <tbody>
+                  <tr>
+                    <th>보증금</th>
+                    <td><span class="zigBangStrong">10000</span>만원</td>
+                  </tr>
+                  <tr>
+                    <th>월세</th>
+                    <td><span class="zigBangStrong">100</span>만원</td>
+                  </tr>
+                  <tr>
+                    <th>등록 번호</th>
+                    <td><span>1234567</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="flex:1" class="table1-pic">
+                <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
+              </div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>주소</th>
+                  <td>서울시 강남구 신사동</td>
+                </tr>
+                <tr>
+                  <th>인근전철역</th>
+                  <td>신사역(3호선)압구정역(7호선)</td>
+                </tr>
+                <tr>
+                  <th>층/건물층수</th>
+                  <td>3층/4층</td>
+                </tr>
+                <tr>
+                  <th>크기</th>
+                  <td>전용면적60.10m²18.18P</td>
+                </tr>
+                <tr>
+                  <th>구조</th>
+                  <td>쓰리룸+</td>
+                </tr>
+                <tr>
+                  <th>건물형태</th>
+                  <td>다세대/다가구</td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <th>옵션</th>
+                  <td>옷장</td>
+                </tr>
+                <tr>
+                  <th>관리비</th>
+                  <td>없음</td>
+                </tr>
+                <tr>
+                  <th>관리비 포함항목</th>
+                  <td>수도</td>
+                </tr>
+                <tr>
+                  <th>주차</th>
+                  <td>불가능</td>
+                </tr>
+                <tr>
+                  <th>엘레베이터</th>
+                  <td>없음</td>
+                </tr>
+                <tr>
+                  <th>입주가능일</th>
+                  <td>4월21일 이후</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="subtitle">
-        <h1>위치정보</h1>
-      </div>
-      <amp-iframe style="border:1px solid #e1e1e1; overflow:auto" width=680 height=400
-                sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                
-                layout="responsive"
-                frameborder="0"
-                src="https://jcdby.github.io/zigbangAMP/daumMap.html">
-      </amp-iframe>
-      <div class="descriptionWrapper">
+        <div class="subtitle">
+          <h1>상세설명</h1>
+        </div>
+        <div class="descriptionWrapper">
+          <p class="description">
+            거실과 방이 크게 나온 신사동 3룸 입니다^^<br> 남향집이고 해가 너무 잘들고 근처 건물들에 비해서 집이 깨끗하고 뷰도 좋은 편입니다. <br> 가격은 집주인 분과 상의 후에 조정 가능합니다!
+            <br> 깔끔하고 좋은 집 보러 연락주세요!
+          </p>
+        </div>
+        <div class="subtitle">
+          <h1>담당자 한마디</h1>
+        </div>
+        <div class="descriptionWrapper">
+          <p class="description">
+            공휴일 및 주말에도 언제든지 상담 가능<br> 차량 픽업 서비스 가능 <br> 조건에 맞는 집 답사 <br> 상담부터 계약까지 고객 맞춤형 서비스
+          </p>
+        </div>
+        <div class="subtitle">
+          <h1>건물정보</h1>
+        </div>
+        <div class="descriptionWrapper">
+          <div class="buildingInfoWrapper">
+            <amp-img style="flex:1" src="./img/buildingPic.png" width="240" height="240" layout="responsive"></amp-img>
+            <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
+              <p style="margin:0">고려 아카데미 텔</p>
+              <p style="margin:0">서울시 마포구 아현동 438-3</p>
+              <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+              <p style="margin:0">17층</p>
+              <p style="margin:0">675세대</p>
+              <p style="margin:0">1987.11</p>
+            </div>
+          </div>
+        </div>
+        <div class="subtitle">
+          <h1>위치정보</h1>
+        </div>
+        <amp-iframe style="border:1px solid #e1e1e1; overflow:auto" width=680 height=400 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+          layout="responsive" frameborder="0" src="https://jcdby.github.io/zigbangAMP/daumMap.html">
+        </amp-iframe>
+        <div class="descriptionWrapper">
           <div class="flexRow">
             <div class="button center flexRow" style="flex:1; align-self:center">
               <amp-img width=35 height=35 src="./img/view_map.png"></amp-img>
@@ -571,67 +573,67 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
               <h3>로드뷰보기</h3>
             </div>
           </div>
-      </div>
+        </div>
 
-      <div class="subtitle">
-        <h1>중개사정보</h1>
-      </div>
-      <div class="descriptionWrapper flexColumn">
-        <div class="description">
-          <div class="flexRow">
-            <div style="flex:1; margin:0 16px 16px 0">
-              <amp-img src="./img/profile.png" width=202 height=202 ></amp-img>
+        <div class="subtitle">
+          <h1>중개사정보</h1>
+        </div>
+        <div class="descriptionWrapper flexColumn">
+          <div class="description">
+            <div class="flexRow">
+              <div style="flex:1; margin:0 16px 16px 0">
+                <amp-img src="./img/profile.png" width=202 height=202></amp-img>
+              </div>
+              <div style="flex:2">
+                <p class="brokerIntroFont fontNormal SourceHanSansKR">대표공인중개사(이갑영)</p>
+                <p class="brokerIntroFont fontLighter SourceHanSansKR">okok@naver.com</p>
+                <p class="brokerIntroFont fontLighter SourceHanSansKR"><span>010-1234-4567</span></p>
+              </div>
             </div>
-            <div style="flex:2">
-              <p class="brokerIntroFont fontNormal SourceHanSansKR">대표공인중개사(이갑영)</p>
-              <p  class="brokerIntroFont fontLighter SourceHanSansKR">okok@naver.com</p>
-              <p  class="brokerIntroFont fontLighter SourceHanSansKR"><span>010-1234-4567</span></p>
-            </div>
-          </div>
-          <div >
-            <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
-            <p class="brokerIntroBox brokerIntroFont fontBold SourceHanSansKR" style="color: #333333" >중개사무소 정보</p>
-            <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
-          </div>
-          <div class="flexColumn brokerIntroBox">
             <div>
-              <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
-              <span class="brokerIntroFont fontLighter SourceHanSansKR">서울시 마포구, 테리 부동산(김테리)</span>
+              <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
+              <p class="brokerIntroBox brokerIntroFont fontBold SourceHanSansKR" style="color: #333333">중개사무소 정보</p>
+              <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
             </div>
-             <div>
-              <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
-              <span class="brokerIntroFont fontLighter SourceHanSansKR">대표번호: 1588-1688</span>
+            <div class="flexColumn brokerIntroBox">
+              <div>
+                <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
+                <span class="brokerIntroFont fontLighter SourceHanSansKR">서울시 마포구, 테리 부동산(김테리)</span>
+              </div>
+              <div>
+                <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
+                <span class="brokerIntroFont fontLighter SourceHanSansKR">대표번호: 1588-1688</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="warnWrapper">
-        <div class="warn">
-          이 방은 <span class="warnStrong">공인중개사가 등록한 중개 매물</span>입니다. <br> 공인중개사를 통해 <span class="warnStrong">안전하게 계약</span>할수
-          있으며, <span class="warnStrong">법정 중개 보수가 발생</span>합니다.
+        <div class="warnWrapper">
+          <div class="warn">
+            이 방은 <span class="warnStrong">공인중개사가 등록한 중개 매물</span>입니다. <br> 공인중개사를 통해 <span class="warnStrong">안전하게 계약</span>할수
+            있으며, <span class="warnStrong">법정 중개 보수가 발생</span>합니다.
+          </div>
+        </div>
+
+
+
+      </section>
+    </main>
+
+
+    <footer>
+      <div class=" footerContentWrapper flexRow">
+        <div>
+          <p class="brokerOne NotoSansCJKkr">우정공인중개사(김성훈)</p>
+          <p class="brokerTwo SourceHanSansKR">중개보조원(한유진팀장)</p>
+          <p style="font-size:28px" class="zigBangStrong SourceHanSansKR"><span>010-5228-7825</span><span><img class="symbolBroker"  src="./img/symbolBroker.png" alt=""></span> </p>
+        </div>
+        <div>
+          <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
         </div>
       </div>
-
-
-
-    </section>
-  </main>
-
-
-  <footer>
-    <div class=" footerContentWrapper flexRow">
-      <div>
-        <p class="brokerOne NotoSansCJKkr">우정공인중개사(김성훈)</p>
-        <p class="brokerTwo SourceHanSansKR">중개보조원(한유진팀장)</p>
-        <p style="font-size:28px" class="zigBangStrong SourceHanSansKR"><span>010-5228-7825</span><span><img class="symbolBroker"  src="./img/symbolBroker.png" alt=""></span> </p>
-      </div>
-      <div>
-        <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
-      </div>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>
 
 </body>
 
