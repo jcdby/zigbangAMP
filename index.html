@@ -1,77 +1,62 @@
-<!--
-#### Introduction
-An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. AMP HTML is entirely built on existing web technologies. It achieves reliable performance by restricting some parts of HTML, CSS and JavaScript. To make up for those limitations AMP HTML defines a set of custom elements for rich content beyond basic HTML. This samples shows what's necessary to create a valid AMP HTML file.
--->
-<!-- -->
 <!doctype html>
-<!-- This tells everyone that this is an AMP file. `<html amp>` works too. -->
 <html ⚡>
-<!-- #### Head -->
-<!-- -->
 
 <head>
-  <!-- The charset definition must be the first child of the `<head>` tag. -->
   <meta charset="utf-8">
-  <!-- The AMP runtime must be loaded as the second child of the `<head>` tag.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!--
-    AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
-  -->
   <link rel="canonical" href="/index">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <!--
-    CSS must be embedded inline.
-  -->
-  <link rel="stylesheet" href="./style.css">
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-  <script type="text/javascript" src="./zigbang.js"></script>
   <style amp-custom>
-  @font-face {
+    @font-face {
       font-family: "SHSKR Normal";
       src: url("./SourceHanSansKR/SourceHanSansKR-Normal.otf");
     }
+    
     @font-face {
       font-family: "SHSKR Bold";
       src: url("./SourceHanSansKR/SourceHanSansKR-Bold.otf");
     }
+    
     @font-face {
       font-family: "SHSKR Light";
       src: url("./SourceHanSansKR/SourceHanSansKR-Light.otf");
     }
+    
     @font-face {
       font-family: "SHSKR Medium";
       src: url("./SourceHanSansKR/SourceHanSansKR-Medium.otf");
     }
+    
     @font-face {
       font-family: "Noto CJK Regular";
       src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Regular.otf");
     }
+    
     @font-face {
       font-family: "Noto CJK Medium";
       src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Medium.otf");
     }
+    
     @font-face {
       font-family: "Noto CJK Bold";
       src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Bold.otf");
     }
-
-.container {
+    
+    .container {
       width: 720px;
       margin: auto;
     }
-
-     body {
+    
+    body {
       display: flex;
       flex-direction: column;
       background-color: #f6f6f6;
-
     }
-
-    
     
     .subtitle {
       padding: 25px 0 16px 15px;
@@ -80,7 +65,8 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       font-size: 34px
     }
     
-    p, h1 {
+    p,
+    h1 {
       margin: 0;
     }
     
@@ -164,7 +150,6 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     
     td {
       font-size: 26px;
-
       font-family: "Noto CJK Regular"
     }
     
@@ -240,14 +225,19 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     .description {
       padding: 31px 39px 35px 23px;
     }
-
-    .buildingInfo, .description {
+    
+    .buildingInfo,
+    .description {
       font-family: "Noto CJK Regular"
     }
-    .buildingInfoTitle,.buildingInfo, .description {
+    
+    .buildingInfoTitle,
+    .buildingInfo,
+    .description {
       margin: 0;
       font-size: 26px;
     }
+    
     .buildingInfoTitle {
       font-family: "Noto CJK Medium"
     }
@@ -263,26 +253,29 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       height: 76px;
       border: 2px solid #e1e1e1;
     }
-
+    
     .positionBtn {
       font-size: 34px;
-      font-family: "Noto CJK Regular" 
+      font-family: "Noto CJK Regular"
     }
     
-    .brokerInfoTitle, .brokerInfoContent, .brokerInfoAddr {
+    .brokerInfoTitle,
+    .brokerInfoContent,
+    .brokerInfoAddr {
       font-size: 25px;
     }
+    
     .brokerInfoTitle {
       font-family: "SHSKR Medium"
     }
+    
     .brokerInfoContent {
       font-family: "SHSKR Normal"
     }
+    
     .brokerInfoAddr {
       font-family: "SHSKR Bold"
     }
-    
-    
     
     .brokerIntroBox {
       margin: 16px 10px 16px 10px
@@ -358,15 +351,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
       padding: 27px 32px 27px 32px;
       justify-content: space-between;
     }
-
-    
-    
-    
-   
   </style>
-  <!--
-    The AMP boilerplate.
-  -->
   <style amp-boilerplate>
     body {
       -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -431,20 +416,14 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     </style>
   </noscript>
 </head>
-<!-- #### Body -->
-<!-- -->
 
-<body id="b">
-
-  <!--
-    Most HTML tags can be used directly in AMP HTML.
-  -->
+<body>
   <div class="container">
     <nav>
-      <div class=" header flexRow center">
+      <div class="header flexRow center">
         <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
         <div class="headerTitle ">
-          <p  id="btnBack">서울시 강남구 신사동</p>
+          <p id="btnBack">서울시 강남구 신사동</p>
         </div>
         <div class="headerShareAndLike">
           <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
@@ -454,32 +433,23 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
     </nav>
 
     <main>
-
+      <amp-image-lightbox id="roomlightbox" layout="nodisplay"></amp-image-lightbox>
       <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
         <div>
-          <a onclick="showModal()">
-            <amp-img src="./img/pic1.jpg" width="720" height="908" layout="responsive"
+          <amp-img on="tap:roomlightbox" role="button" tabindex="0" src="./img/pic1.jpg" width="720" height="908" layout="responsive"
           />
-          </a>
-          
         </div>
         <div>
-          <a onclick="showModal()">
-            <amp-img   src="./img/pic2.jpg" width="720" height="908" layout="responsive"
-            />
-          </a>
+          <amp-img on="tap:roomlightbox" role="button" tabindex="0" src="./img/pic2.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
         <div>
-         <a onclick="showModal()">
-            <amp-img   src="./img/pic3.jpg" width="720" height="908" layout="responsive"
-            />
-          </a>
+          <amp-img on="tap:roomlightbox" role="button" tabindex="0" src="./img/pic3.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
         <div>
-          <a onclick="showModal()">
-            <amp-img   src="./img/pic4.jpg" width="720" height="908" layout="responsive"
-            />
-          </a>
+          <amp-img on="tap:roomlightbox" role="button" tabindex="0" src="./img/pic4.jpg" width="720" height="908" layout="responsive"
+          />
         </div>
       </amp-carousel>
       <section class="safeProxy">
@@ -488,7 +458,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
             <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
           </div>
           <div>
-            <h1 style="flex:3"  id="titleSafeProxy">가 등록한 방입니다.</h3>
+            <h1 style="flex:3" id="titleSafeProxy">가 등록한 방입니다.</h3>
           </div>
           <div>
             <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
@@ -500,7 +470,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
           <h1 class="houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
           <div class="houseDetailsTable descriptionWrapper flexColumn">
             <div class="flexRow">
-              
+
               <table style="flex:1" class="table1">
                 <tbody>
                   <tr>
@@ -601,12 +571,25 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
           <div class="buildingInfoWrapper">
             <amp-img style="flex:1" src="./img/buildingPic.png" width="240" height="240" layout="responsive"></amp-img>
             <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
+              <amp-list width=auto height=100 layout=fixed-height src="https://raw.githubusercontent.com/jcdby/zigbangAMP/1da63f53d7c264ef20b02d06a82e2d9b8f142da8/items.json">
+                <template type="amp-mustache" id="amp-template-id">
+                  <div>
+                    <p class="buildingInfoTitle">{{name}}고려 아카데미 텔</p>
+                    <p class="buildingInfo" style="color: #333333">{{address1}} {{address2}} {{address3}}서울시 마포구 아현동 438-3</p>
+                    <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
+                    <p class="buildingInfo">{{floor}}17층</p>
+                    <p class="buildingInfo">{{rooms}}675세대</p>
+                    <p class="buildingInfo">{{established}}1987.11</p>
+                  </div>
+                </template>
+              </amp-list>
+
               <p class="buildingInfoTitle">고려 아카데미 텔</p>
               <p class="buildingInfo" style="color: #333333">서울시 마포구 아현동 438-3</p>
               <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
-              <p class="buildingInfo" >17층</p>
-              <p class="buildingInfo" >675세대</p>
-              <p class="buildingInfo" >1987.11</p>
+              <p class="buildingInfo">17층</p>
+              <p class="buildingInfo">675세대</p>
+              <p class="buildingInfo">1987.11</p>
             </div>
           </div>
         </div>
@@ -684,13 +667,14 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
         </div>
       </div>
     </footer>
-     <div id="modal" class="modal">
-      <button onclick="closeModal()">X</button>
-      <div class="modalContent">
+    <amp-list width=auto height=100 layout=fixed-height src="https://ampbyexample.com/json/examples.json">
+      <template type="amp-mustache" id="amp-template-id">
+        <div>
+          <p>{{title}}</p>
+        </div>
+      </template>
+    </amp-list>
 
-      </div>
-    </div>
-  </div>
 
 </body>
 

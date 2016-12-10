@@ -1,3 +1,4 @@
+/*modal part*/
 .modal {
   display: none;
   position: absolute;
@@ -15,3 +16,345 @@ body.modal-open {
   position:fixed;
   width: 100%;
 }
+
+/*main part*/
+@font-face {
+  font-family: "SHSKR Normal";
+  src: url("./SourceHanSansKR/SourceHanSansKR-Normal.otf");
+}
+
+@font-face {
+  font-family: "SHSKR Bold";
+  src: url("./SourceHanSansKR/SourceHanSansKR-Bold.otf");
+}
+
+@font-face {
+  font-family: "SHSKR Light";
+  src: url("./SourceHanSansKR/SourceHanSansKR-Light.otf");
+}
+
+@font-face {
+  font-family: "SHSKR Medium";
+  src: url("./SourceHanSansKR/SourceHanSansKR-Medium.otf");
+}
+
+@font-face {
+  font-family: "Noto CJK Regular";
+  src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto CJK Medium";
+  src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Medium.otf");
+}
+
+@font-face {
+  font-family: "Noto CJK Bold";
+  src: url("./NotoSansCJKkr-hinted/NotoSansCJKkr-Bold.otf");
+}
+
+.container {
+  width: 720px;
+  margin: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+}
+
+.subtitle {
+  padding: 25px 0 16px 15px;
+  color: #616161;
+  font-family: "Noto CJK Bold";
+  font-size: 34px
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #ffa409;
+  min-height: 112;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+/*header part*/
+
+.header {
+  padding: 39px 31px 39px 31px;
+  flex: 1;
+}
+
+.headerBackArrow {
+  margin-right: 31px;
+}
+
+.headerTitle {
+  flex: 2;
+  margin-right: 31px;
+  letter-spacing: 1px
+}
+
+.headerShareAndLike {
+  flex: 1
+}
+
+#btnBack {
+  font-size: 38px;
+  font-weight: 200;
+  margin: 0;
+  color: white;
+  font-family: "Noto CJK Regular"
+}
+
+#btnBack,
+#titleSafeProxy {
+  color: white;
+}
+/*header end*/
+/*
+blue board
+*/
+
+.safeProxy {
+  display: flex;
+  background-color: #0ec4bf;
+}
+
+.safeProxyContentWrapper {
+  flex: 1;
+  padding: 24px 35px 16px 23px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#titleSafeProxy {
+  font-size: 32px;
+  font-weight: 300;
+  margin-right: 180px;
+  font-family: "SHSKR Medium"
+}
+/*
+table
+*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #eeeeee
+}
+
+td,
+th {
+  padding-left: 18px;
+}
+
+td {
+  font-size: 26px;
+  font-family: "Noto CJK Regular"
+}
+
+th {
+  text-align: left;
+  height: 60px;
+  font-size: 26px;
+  font-weight: medium;
+  color: #6a6a6a;
+  background-color: #fafafa;
+  width: 31%;
+  max-width: 31%;
+  font-family: "Noto CJK Medium"
+}
+
+.zigBangStrong {
+  color: #ee7912;
+  font-size: 34px;
+  font-weight: bold;
+  padding-right: 12px;
+  font-family: "Noto CJK Bold"
+}
+
+.table1 {
+  border-collapse: collapse;
+  width: 100%;
+  height: 240px
+}
+
+.table1-pic {
+  position: relative;
+  right: 246px;
+  top: 19px;
+  /*padding:12px 26px 0 0*/
+}
+/*
+==============================================
+*/
+
+.contentsWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 20px
+}
+
+.houseDetailsCardTitle {
+  font-size: 34px;
+  font-weight: bold;
+  font-family: "Noto CJK Bold"
+}
+
+.houseDetailsCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.houseDetailsCard > h1 {
+  color: black;
+  font-weight: bold;
+  margin: 0;
+  padding: 24px 0 24px 15px
+}
+
+.houseDetailsTable {
+  border: 2px solid #e1e1e1;
+}
+
+.descriptionWrapper {
+  background-color: white;
+  border: 2px solid #e1e1e1;
+}
+
+.description {
+  padding: 31px 39px 35px 23px;
+}
+
+.buildingInfo,
+.description {
+  font-family: "Noto CJK Regular"
+}
+
+.buildingInfoTitle,
+.buildingInfo,
+.description {
+  margin: 0;
+  font-size: 26px;
+}
+
+.buildingInfoTitle {
+  font-family: "Noto CJK Medium"
+}
+
+.buildingInfoWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 25px 35px 20px 23px
+}
+
+.button {
+  background-color: white;
+  height: 76px;
+  border: 2px solid #e1e1e1;
+}
+
+.positionBtn {
+  font-size: 34px;
+  font-family: "Noto CJK Regular"
+}
+
+.brokerInfoTitle,
+.brokerInfoContent,
+.brokerInfoAddr {
+  font-size: 25px;
+}
+
+.brokerInfoTitle {
+  font-family: "SHSKR Medium"
+}
+
+.brokerInfoContent {
+  font-family: "SHSKR Normal"
+}
+
+.brokerInfoAddr {
+  font-family: "SHSKR Bold"
+}
+
+.brokerIntroBox {
+  margin: 16px 10px 16px 10px
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRow,
+.flexColumn {
+  display: flex;
+}
+
+.flexRow {
+  flex-direction: row;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.warnWrapper {
+  background-color: #848484;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.warn,
+.warnStrong {
+  font-size: 24px
+}
+
+.warn {
+  margin: 0;
+  padding: 16px 36px 20px 26px;
+  color: white;
+  font-weight: 100;
+  font-family: "SHSKR Light"
+}
+
+.warnStrong {
+  font-family: "SHSKR Bold"
+}
+
+.symbolBroker {
+  vertical-align: sub;
+  padding-left: 10px;
+}
+
+.brokerOne {
+  font-family: "SHSKR Medium";
+  color: #929292;
+  font-size: 23px;
+}
+
+.brokerTwo {
+  font-family: "SHSKR Medium";
+  font-size: 27px;
+}
+
+.brokerOne,
+.brokerTwo {
+  padding-bottom: 3px;
+}
+
+footer {
+  background-color: #ffffff
+}
+
+.footerContentWrapper {
+  padding: 27px 32px 27px 32px;
+  justify-content: space-between;
+}
+
