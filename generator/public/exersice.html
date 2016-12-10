@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="stylesheets/style2.css">
+  <title>Pictures Slide Show</title>
+</head>
+
+<body>
+  <a ></a>
+  <div class="modal">
+
+  </div>
+
+
+<div class="container">
+  <div class="slideShow">
+    <div class="slide"><img src="img/pic1.jpg" alt="" width="720px" height="908px"></div>
+    <div class="slide"><img src="img/pic2.jpg" alt="" width="720px" height="908px"></div>
+    <div class="slide"><img src="img/pic3.jpg" alt=""  width="720px" height="908px"></div>
+    <div class="slide"><img src="img/pic4.jpg" alt=""  width="720px" height="908px"></div>
+
+    <a class="prev" onclick="prevSlide()">&#10094;</a>
+    <a class="next" onclick="nextSlide()">&#10095;</a>
+
+  </div>
+
+</div>
+
+<script>
+  var slideIndex = 1;
+  
+  showSlide(slideIndex);
+
+  function prevSlide(){
+    slideIndex = slideIndex - 1;
+    console.log(slideIndex)
+    showSlide(slideIndex);
+  }
+
+  function nextSlide() {
+    slideIndex = slideIndex + 1;
+    console.log(slideIndex)
+    showSlide(slideIndex);
+  }
+
+
+  function showSlide(){
+
+    var slides  = document.getElementsByClassName('slide');
+
+    if(slideIndex < 1) {
+      slideIndex = slides.length;
+    }
+    if(slideIndex > slides.length){
+      slideIndex = 1;
+    }
+
+    for (var j = 0; j < slides.length; j++) {
+      slides[j].style.display = "none"; 
+    }
+
+
+    // slides.forEach(function(item){
+    //   item.style.display = 'none';
+    // })
+   
+    slides[slideIndex-1].style.display = "block";
+
+
+
+  }
+</script>
+
+</body>
+
+
+
+</html>

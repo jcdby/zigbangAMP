@@ -3,59 +3,53 @@
 
 <head>
   <title>zigbang front test without AMP</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <link rel="stylesheet" href="/stylesheets/style2.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 
+</head>
 
 <body>
   <div class="container">
     <nav>
       <div class="header flexRow center">
-        <amp-img class="headerBackArrow" src="./img/ic_back.png" width="40" height="35"></amp-img>
+        <div class="headerBackArrow">
+          <img src="/img/ic_back.png" width="40" height="35">
+        </div>
         <div class="headerTitle ">
           <p id="btnBack">서울시 강남구 신사동</p>
         </div>
         <div class="headerShareAndLike">
-          <amp-img style="margin:0 73px 0 28px" src="./img/ic_share.png" width="35" height="42"></amp-img>
-          <amp-img src="./img/ic_like_normal.png" width="42" height="40"></amp-img>
+          <img style="margin:0 73px 0 28px" src="/img/ic_share.png" alt="share" width=35 height=42>
+          <img src="img/ic_like_normal.png" alt="like" width=42 height=40>
         </div>
       </div>
     </nav>
 
     <main>
-      <amp-carousel width="750" height="908" type="slides" autoplay loop layout="responsive">
-        <div>
-          <a onclick="showModal()">
-            <amp-img src="./img/pic1.jpg" width="720" height="908" layout="responsive" />
-          </a>
 
+      <div class="container">
+        <div class="slideShow">
+          <div class="slide"><img src="img/pic1.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><img src="img/pic2.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><img src="img/pic3.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><img src="img/pic4.jpg" alt="" width="720px" height="908px"></div>
+
+          <a class="prev" onclick="prevSlide()">&#10094;</a>
+          <a class="next" onclick="nextSlide()">&#10095;</a>
         </div>
-        <div>
-          <a onclick="showModal()">
-            <amp-img src="./img/pic2.jpg" width="720" height="908" layout="responsive" />
-          </a>
-        </div>
-        <div>
-          <a onclick="showModal()">
-            <amp-img src="./img/pic3.jpg" width="720" height="908" layout="responsive" />
-          </a>
-        </div>
-        <div>
-          <a onclick="showModal()">
-            <amp-img src="./img/pic4.jpg" width="720" height="908" layout="responsive" />
-          </a>
-        </div>
-      </amp-carousel>
+      </div>
+
+
       <section class="safeProxy">
         <div class="flexRow safeProxyContentWrapper">
           <div>
-            <amp-img style="flex:1" src="./img/Vector Smart Object.png" width="182" height="56"></amp-img>
+            <img src="/img/Vector Smart Object.png" alt="" width="182" height="56">
           </div>
           <div>
             <h1 style="flex:3" id="titleSafeProxy">가 등록한 방입니다.</h3>
           </div>
           <div>
-            <amp-img style="flex:1" src="./img/ic_help_black_24dp.png" width="40" height="40"></amp-img>
+            <img src="/img/ic_help_black_24dp.png" alt="" width="40" height=40>
           </div>
         </div>
       </section>
@@ -64,7 +58,6 @@
           <h1 class="houseDetailsCardTitle">신사동 예쁜 쓰리룸</h1>
           <div class="houseDetailsTable descriptionWrapper flexColumn">
             <div class="flexRow">
-
               <table style="flex:1" class="table1">
                 <tbody>
                   <tr>
@@ -82,7 +75,7 @@
                 </tbody>
               </table>
               <div style="flex:1" class="table1-pic">
-                <amp-img src="./img/Layer 2.png" width="222" height=122></amp-img>
+                <img src="/img/Layer 2.png" alt="" width="222" height="122">
               </div>
             </div>
             <div>
@@ -163,13 +156,13 @@
         </div>
         <div class="descriptionWrapper">
           <div class="buildingInfoWrapper">
-            <amp-img style="flex:1" src="./img/buildingPic.png" width="240" height="240" layout="responsive"></amp-img>
+            <img src="img/buildingPic.png" alt="" width="240" height="240">
             <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
-              <p class="buildingInfoTitle">고려 아카데미 텔</p>
-              <p class="buildingInfo" style="color: #333333">서울시 마포구 아현동 438-3</p>
-              <amp-img src="./img/line.png" width=384 height=2 layout="responsive"></amp-img>
-              <p class="buildingInfo">17층</p>
-              <p class="buildingInfo">675세대</p>
+              <p class="buildingInfoTitle" style="margin-bottom:6px">고려 아카데미 텔</p>
+              <p class="buildingInfo" style="color: #333333; margin-bottom: 19px">서울시 마포구 아현동 438-3</p>
+              <img src="img/line.png" alt="" width="384" height="2">
+              <p class="buildingInfo" style="margin-bottom:10px; margin-top: 6px">17층</p>
+              <p class="buildingInfo" style="margin-bottom:8px">675세대</p>
               <p class="buildingInfo">1987.11</p>
             </div>
           </div>
@@ -177,17 +170,17 @@
         <div class="subtitle">
           <p>위치정보</p>
         </div>
-        <amp-iframe style="border:1px solid #e1e1e1;" width=680 height=400 sandbox="allow-scripts  allow-popups allow-popups-to-escape-sandbox"
-          layout="responsive" frameborder="0" src="https://jcdby.github.io/zigbangAMP/daumMap.html">
-        </amp-iframe>
+        <div weidth=680 height=400>
+          <div style="width:100%" id="daumRoughmapContainer1481204928223" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+        </div>
         <div class="descriptionWrapper">
           <div class="flexRow">
             <div class="button center flexRow" style="flex:1; align-self:center">
-              <amp-img style="margin-right: 16px" width=35 height=35 src="./img/view_map.png"></amp-img>
+              <img style="margin-right:16px" src="img/view_map.png" alt="" width="35" height=35>
               <p class="positionBtn">지도보기</p>
             </div>
             <div class="flexRow button center" style="flex:1; align-self:cneter">
-              <amp-img style="margin-right: 16px" width=30 height=41 src="./img/view_road.png"></amp-img>
+              <img style="margin-right:16px" src="img/view_road.png" alt="" width="30" height=41>
               <p class="positionBtn">로드뷰보기</p>
             </div>
           </div>
@@ -200,7 +193,7 @@
           <div class="description">
             <div class="flexRow">
               <div style="flex:1; margin:0 16px 16px 0">
-                <amp-img src="./img/profile.png" width=202 height=202></amp-img>
+                <img src="img/profile.png" alt="" width="202" height="202">
               </div>
               <div style="flex:2">
                 <p class="brokerInfoTitle">대표공인중개사(이갑영)</p>
@@ -209,17 +202,17 @@
               </div>
             </div>
             <div>
-              <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
-              <p class="brokerIntroBox brokerInfoAddr fontBold NotoSans" style="color: #333333">중개사무소 정보</p>
-              <amp-img src="./img/line.png" width=384 height=1 layout="responsive"></amp-img>
+              <img src="img/line.png" alt="" width="100%" height="2">
+              <p class="brokerIntroBox brokerInfoAddr fontBold NotoSans" style="margin: 0 10px -16px 10px;;color: #333333">중개사무소 정보</p>
+              <img src="img/line.png" alt="" width="100%" height="2">
             </div>
             <div class="flexColumn brokerIntroBox">
               <div>
-                <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
+                <img src="img/listPoint.png" alt="" width=4 height=4 style="vertical-align:super">
                 <span class="brokerInfoContent">서울시 마포구, 테리 부동산(김테리)</span>
               </div>
               <div>
-                <amp-img style="vertical-align:super" src="./img/listPoint.png" width=4 height=4></amp-img>
+                <img src="img/listPoint.png" alt="" width=4 height=4 style="vertical-align:super">
                 <span class="brokerInfoContent">대표번호: 1588-1688</span>
               </div>
             </div>
@@ -241,10 +234,10 @@
         <div>
           <p class="brokerOne">우정공인중개사(김성훈)</p>
           <p class="brokerTwo">중개보조원(한유진팀장)</p>
-          <p style="font-size:28px" class="zigBangStrong NotoSans"><span>010-5228-7825</span><span><img class="symbolBroker"  src="./img/symbolBroker.png" alt=""></span> </p>
+          <p style="font-size:28px" class="zigBangStrong NotoSans"><span>010-5228-7825</span><span><img class="symbolBroker"  src="/img/symbolBroker.png" alt=""></span> </p>
         </div>
         <div style="padding-top:3px">
-          <amp-img src="./img/ic_call_black_24dp.png" width=326 height=104></amp-img>
+          <img src="img/ic_call_black_24dp.png" alt="" width="326" height="104">
         </div>
       </div>
     </footer>
@@ -256,6 +249,60 @@
     </div>
   </div>
 
+  <div class="modal">
+
+  </div>
+
 </body>
+<script>
+  var slideIndex = 1;
+  
+  showSlide(slideIndex);
+
+  function prevSlide(){
+    slideIndex = slideIndex - 1;
+    console.log(slideIndex)
+    showSlide(slideIndex);
+  }
+
+  function nextSlide() {
+    slideIndex = slideIndex + 1;
+    console.log(slideIndex)
+    showSlide(slideIndex);
+  }
+
+
+  function showSlide(){
+
+    var slides  = document.getElementsByClassName('slide');
+
+    if(slideIndex < 1) {
+      slideIndex = slides.length;
+    }
+    if(slideIndex > slides.length){
+      slideIndex = 1;
+    }
+
+    for (var j = 0; j < slides.length; j++) {
+      slides[j].style.display = "none"; 
+    }   
+    slides[slideIndex-1].style.display = "block";
+
+
+
+  }
+</script>
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://spi.maps.daum.net/imap/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1481204928223",
+		"key" : "enr8",
+		"mapWidth" : "680",
+		"mapHeight" : "400"
+	}).render();
+</script>
+
 
 </html>
