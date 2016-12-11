@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
   <title>zigbang front test without AMP</title>
   <link rel="stylesheet" href="/stylesheets/style2.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
@@ -13,7 +14,7 @@
     <nav>
       <div class="header flexRow center">
         <div class="headerBackArrow">
-          <img src="/img/ic_back.png" width="40" height="35">
+          <img src="/img/ic_back.png" alt="backArrow" width="40" height="35">
         </div>
         <div class="headerTitle ">
           <p id="btnBack">서울시 강남구 신사동</p>
@@ -29,10 +30,18 @@
 
       <div class="container">
         <div class="slideShow">
-          <div class="slide"><a onclick="show()"><img src="img/pic1.jpg" alt="" width="720px" height="908px"></div>
-          <div class="slide"><a onclick="show()"><img src="img/pic2.jpg" alt="" width="720px" height="908px"></div>
-          <div class="slide"><a onclick="show()"><img src="img/pic3.jpg" alt="" width="720px" height="908px"></div>
-          <div class="slide"><a onclick="show()"><img src="img/pic4.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide">
+            <a onclick="show(1)"><img src="img/pic1.jpg" alt="" width="720" height="908"></a>
+          </div>
+          <div class="slide">
+            <a onclick="show(2)"><img src="img/pic2.jpg" alt="" width="720" height="908"></a>
+          </div>
+          <div class="slide">
+            <a onclick="show(3)"><img src="img/pic3.jpg" alt="" width="720" height="908"></a>
+          </div>
+          <div class="slide">
+            <a onclick="show(4)"><img src="img/pic4.jpg" alt="" width="720" height="908"></a>
+          </div>
 
           <a class="prev" onclick="prevSlide('slide')">&#10094;</a>
           <a class="next" onclick="nextSlide('slide')">&#10095;</a>
@@ -45,10 +54,10 @@
       <section class="safeProxy">
         <div class="flexRow safeProxyContentWrapper">
           <div>
-            <img src="/img/Vector Smart Object.png" alt="" width="182" height="56">
+            <img src="/img/VectorSmartObject.png" alt="" width="182" height="56">
           </div>
           <div>
-            <h1 style="flex:3" id="titleSafeProxy">가 등록한 방입니다.</h3>
+            <h1 style="flex:3" id="titleSafeProxy">가 등록한 방입니다.</h1>
           </div>
           <div>
             <img src="/img/ic_help_black_24dp.png" alt="" width="40" height=40>
@@ -77,7 +86,7 @@
                 </tbody>
               </table>
               <div style="flex:1" class="table1-pic">
-                <img src="/img/Layer 2.png" alt="" width="222" height="122">
+                <img src="/img/Layer2.png" alt="" width="222" height="122">
               </div>
             </div>
             <div>
@@ -160,19 +169,19 @@
           <div class="buildingInfoWrapper">
             <img src="img/buildingPic.png" alt="" width="240" height="240">
             <div style="flex:2; display: flex; flex-direction: column; padding-left: 34px">
-              <p class="buildingInfoTitle" style="margin-bottom:6px">고려 아카데미 텔</p>
-              <p class="buildingInfo" style="color: #333333; margin-bottom: 19px">서울시 마포구 아현동 438-3</p>
+              <p id="buildingName" class="buildingInfoTitle" style="margin-bottom:6px">loading..</p>
+              <p id="buildingAddress" class="buildingInfo" style="color: #333333; margin-bottom: 19px">loading...</p>
               <img src="img/line.png" alt="" width="384" height="2">
-              <p class="buildingInfo" style="margin-bottom:10px; margin-top: 6px">17층</p>
-              <p class="buildingInfo" style="margin-bottom:8px">675세대</p>
-              <p class="buildingInfo">1987.11</p>
+              <p id="buildingFloor" class="buildingInfo" style="margin-bottom:10px; margin-top: 6px">loading...</p>
+              <p id="buildingRooms" class="buildingInfo" style="margin-bottom:8px">loading...</p>
+              <p id="buildingEstablished" class="buildingInfo">loading...</p>
             </div>
           </div>
         </div>
         <div class="subtitle">
           <p>위치정보</p>
         </div>
-        <div weidth=680 height=400>
+        <div style="overflow:hidden;width:680px; height: 400px;">
           <div style="width:100%" id="daumRoughmapContainer1481204928223" class="root_daum_roughmap root_daum_roughmap_landing"></div>
         </div>
         <div class="descriptionWrapper">
@@ -204,9 +213,9 @@
               </div>
             </div>
             <div>
-              <img src="img/line.png" alt="" width="100%" height="2">
+              <img style="width:100%; height:2px;" src="img/line.png" alt="">
               <p class="brokerIntroBox brokerInfoAddr fontBold NotoSans" style="margin: 0 10px -16px 10px;;color: #333333">중개사무소 정보</p>
-              <img src="img/line.png" alt="" width="100%" height="2">
+              <img style="width:100%; height:2px;" src="img/line.png" alt="">
             </div>
             <div class="flexColumn brokerIntroBox">
               <div>
@@ -239,7 +248,7 @@
           <p style="font-size:28px" class="zigBangStrong NotoSans"><span>010-5228-7825</span><span><img class="symbolBroker"  src="/img/symbolBroker.png" alt=""></span> </p>
         </div>
         <div style="padding-top:3px">
-          <img src="img/ic_call_black_24dp.png" alt="" width="326" height="104">
+          <a href="tel:01084330922"><img src="img/ic_call_black_24dp.png" alt="" width="326" height="104"></a>
         </div>
       </div>
     </footer>
@@ -248,10 +257,10 @@
       <a class="close" onclick="closeModal()">&times;</a>
       <div class="modalContainer">
         <div class="modalSlideShow">
-          <div class="item"><img src="img/pic1.jpg" alt="" width=100% height="100%"></div>
-          <div class="item"><img src="img/pic2.jpg" alt="" width=100% height="100%"></div>
-          <div class="item"><img src="img/pic3.jpg" alt="" width=100% height="100%"></div>
-          <div class="item"><img src="img/pic4.jpg" alt="" width=100% height="100%"></div>
+          <div class="item"><img style="width:100%; height:100%;" src="img/pic1.jpg" alt=""></div>
+          <div class="item"><img style="width:100%; height:100%;" src="img/pic2.jpg" alt=""></div>
+          <div class="item"><img style="width:100%; height:100%;" src="img/pic3.jpg" alt=""></div>
+          <div class="item"><img style="width:100%; height:100%;" src="img/pic4.jpg" alt=""></div>
 
           <a class="prev" onclick="prevSlide('item')">&#10094;</a>
           <a class="next" onclick="nextSlide('item')">&#10095;</a>
@@ -260,18 +269,17 @@
 
       </div>
     </div>
+  </div>
 
-</body>
-
-<script type="text/javascript" src="javascripts/modalAndSlide.js"></script>
-<script>
+  <script type="text/javascript" src="javascripts/modalAndSlide.js"></script>
+  <script>
   showSlide('slide', slideIndex); //start to show slide.
 </script>
 
-<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://spi.maps.daum.net/imap/map_js_init/roughmapLoader.js"></script>
+  <script class="daum_roughmap_loader_script" src="https://spi.maps.daum.net/imap/map_js_init/roughmapLoader.js"></script>
 
-<!-- 3. 실행 스크립트 -->
-<script charset="UTF-8">
+  <!-- 3. 실행 스크립트 -->
+  <script>
 	new daum.roughmap.Lander({
 		"timestamp" : "1481204928223",
 		"key" : "enr8",
@@ -279,6 +287,39 @@
 		"mapHeight" : "400"
 	}).render();
 </script>
+  <script>
+ var request = new XMLHttpRequest();
+ request.open('GET', '/items.json', true);
+  request.onreadystatechange = function() {
+  if (this.readyState === 4) {
+    if (this.status >= 200 && this.status < 400) {
+      // Get data remotely
+      var data = JSON.parse(this.responseText).items[0];
+      var buildingName = document.getElementById('buildingName');
+      var buildingAddress = document.getElementById('buildingAddress');
+      var buildingFloor = document.getElementById('buildingFloor');
+      var buildingRooms = document.getElementById('buildingRooms');
+      var buildingEstablished = document.getElementById('buildingEstablished');
+
+
+      buildingName.innerHTML = data.name; 
+      buildingAddress.innerHTML = data.address1 + data.address2 + data.address3;
+      buildingFloor.innerHTML = data.floor;
+      buildingRooms.innerHTML = data.rooms;
+      buildingEstablished.innerHTML = data.established;
+
+
+    } else {
+      throw new Error('Failed to get data!');
+    }
+  }
+};
+request.send();
+request = null;
+</script>
+</body>
+
+
 
 
 </html>

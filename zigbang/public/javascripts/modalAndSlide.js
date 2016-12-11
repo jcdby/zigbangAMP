@@ -5,9 +5,10 @@ var modalSlideIndex = 1; // default modal slide index.
 
 
 //modal switch function  
-function show() {
+function show(index) {
   modal.style.display = "block";
-  body.style.overflow = "hidden"
+  body.style.overflow = "hidden";
+  updateIndex('item', index);
   showSlide('item', modalSlideIndex); // when open modal show slide.
 }
 
