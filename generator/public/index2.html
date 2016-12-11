@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body id="b">
   <div class="container">
     <nav>
       <div class="header flexRow center">
@@ -29,14 +29,16 @@
 
       <div class="container">
         <div class="slideShow">
-          <div class="slide"><img src="img/pic1.jpg" alt="" width="720px" height="908px"></div>
-          <div class="slide"><img src="img/pic2.jpg" alt="" width="720px" height="908px"></div>
-          <div class="slide"><img src="img/pic3.jpg" alt="" width="720px" height="908px"></div>
-          <div class="slide"><img src="img/pic4.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><a onclick="show()"><img src="img/pic1.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><a onclick="show()"><img src="img/pic2.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><a onclick="show()"><img src="img/pic3.jpg" alt="" width="720px" height="908px"></div>
+          <div class="slide"><a onclick="show()"><img src="img/pic4.jpg" alt="" width="720px" height="908px"></div>
 
-          <a class="prev" onclick="prevSlide()">&#10094;</a>
-          <a class="next" onclick="nextSlide()">&#10095;</a>
+          <a class="prev" onclick="prevSlide('slide')">&#10094;</a>
+          <a class="next" onclick="nextSlide('slide')">&#10095;</a>
+
         </div>
+
       </div>
 
 
@@ -241,57 +243,31 @@
         </div>
       </div>
     </footer>
+
     <div id="modal" class="modal">
-      <button onclick="closeModal()">X</button>
-      <div class="modalContent">
+      <a class="close" onclick="closeModal()">&times;</a>
+      <div class="modalContainer">
+        <div class="modalSlideShow">
+          <div class="item"><img src="img/pic1.jpg" alt="" width=100% height="100%"></div>
+          <div class="item"><img src="img/pic2.jpg" alt="" width=100% height="100%"></div>
+          <div class="item"><img src="img/pic3.jpg" alt="" width=100% height="100%"></div>
+          <div class="item"><img src="img/pic4.jpg" alt="" width=100% height="100%"></div>
+
+          <a class="prev" onclick="prevSlide('item')">&#10094;</a>
+          <a class="next" onclick="nextSlide('item')">&#10095;</a>
+
+        </div>
 
       </div>
     </div>
-  </div>
-
-  <div class="modal">
-
-  </div>
 
 </body>
+
+<script type="text/javascript" src="javascripts/modalAndSlide.js"></script>
 <script>
-  var slideIndex = 1;
-  
-  showSlide(slideIndex);
-
-  function prevSlide(){
-    slideIndex = slideIndex - 1;
-    console.log(slideIndex)
-    showSlide(slideIndex);
-  }
-
-  function nextSlide() {
-    slideIndex = slideIndex + 1;
-    console.log(slideIndex)
-    showSlide(slideIndex);
-  }
-
-
-  function showSlide(){
-
-    var slides  = document.getElementsByClassName('slide');
-
-    if(slideIndex < 1) {
-      slideIndex = slides.length;
-    }
-    if(slideIndex > slides.length){
-      slideIndex = 1;
-    }
-
-    for (var j = 0; j < slides.length; j++) {
-      slides[j].style.display = "none"; 
-    }   
-    slides[slideIndex-1].style.display = "block";
-
-
-
-  }
+  showSlide('slide', slideIndex); //start to show slide.
 </script>
+
 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://spi.maps.daum.net/imap/map_js_init/roughmapLoader.js"></script>
 
 <!-- 3. 실행 스크립트 -->
