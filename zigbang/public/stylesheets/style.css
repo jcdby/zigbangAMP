@@ -170,8 +170,8 @@ th {
 }
 
 .table1-pic {
-  position: relative;
-  right: 246px;
+  position: absolute;
+  right: 25px;
   top: 19px;
   /*padding:12px 26px 0 0*/
 }
